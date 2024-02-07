@@ -4680,6 +4680,7 @@ section {
     text-transform: capitalize;
     padding: 18px 40px;
     padding-right: 10px;
+    white-space: nowrap;
 }
 
 .table-data3 thead tr th:first-child {

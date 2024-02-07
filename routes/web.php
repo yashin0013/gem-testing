@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +26,9 @@ Route::post('admin/auth',[AdminController::class,'auth'])->name('admin.auth');
 Route::group(['middleware'=>'admin_auth'],function()
 {
 Route::view('admin/dashboard','admin/dashboard');
-Route::get('admin/gems',[AdminController::class,'gems']);
+
+Route::get('admin/gems',[GemController::class,'index']);
+Route::get('admin/gem/create',[GemController::class,'create']);
 
 Route::get('admin/contact_msg',[AdminController::class,'contact_msg']);
 Route::get('admin/contact/delete/{id}',[AdminController::class,'delete']);

@@ -65,10 +65,6 @@ class AdminController extends Controller
 
     }
 
-    function gems() {
-        echo "yes";
-    }
-
     public function logistic()
     {
         // $data['categories'] = DB::table('category')->get();

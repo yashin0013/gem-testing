@@ -81,22 +81,15 @@
                             <a href="{{url('admin/contact_msg')}}">
                                 <i class="fas fa-list"></i>Contact Masseges</a>
                         </li>
-                        <li class="@yield('service_selected')">
-                            <a href="{{url('admin/service')}}">
-                            <i class="fab fa-usps"></i>Services</a>
+                        <li class="@yield('gems')">
+                            <a href="{{url('admin/gems')}}">
+                            <i class="fab fa-usps"></i>Gems</a>
                         </li>
                         <li class="@yield('category')">
                             <a href="{{url('admin/category')}}">
                             <i class="fab fa-usps"></i>Category</a>
                         </li>
-                        <li class="@yield('products')">
-                            <a href="{{url('admin/products')}}">
-                            <i class="fab fa-usps"></i>Products</a>
-                        </li>
-                        <li class="@yield('logistic')">
-                            <a href="{{url('admin/logistic')}}">
-                            <i class="fab fa-usps"></i>Logistic</a>
-                        </li>
+                       
                     </ul>
                 </nav>
             </div>
