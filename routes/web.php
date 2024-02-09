@@ -16,26 +16,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 
 Route::get('admin',[AdminController::class,'index']);
 Route::post('admin/auth',[AdminController::class,'auth'])->name('admin.auth');
 // Route::get('admin/updatepassword',[AdminController::class,'updatepassword']);
-Route::group(['middleware'=>'admin_auth'],function()
+Route::group(['middleware'=>'admin_auth', 'prefix'=> 'admin'],function()
 {
-Route::view('admin/dashboard','admin/dashboard');
+Route::view('/dashboard','admin/dashboard');
 
-Route::get('admin/gems',[GemController::class,'index']);
-Route::get('admin/gem/create',[GemController::class,'create']);
+Route::get('/gems',[GemController::class,'index']);
+Route::get('/gem/create',[GemController::class,'create']);
+Route::post('/gem/store',[GemController::class,'store'])->name('gem.store');
+Route::get('/gem/delete/{id}',[GemController::class,'delete']);
 
-Route::get('admin/contact_msg',[AdminController::class,'contact_msg']);
-Route::get('admin/contact/delete/{id}',[AdminController::class,'delete']);
+Route::get('/contact_msg',[AdminController::class,'contact_msg']);
+Route::get('/contact/delete/{id}',[AdminController::class,'delete']);
 
 // Category routes 
-Route::get('admin/category',[AdminController::class,'category']);
-Route::post('admin/category/insert',[AdminController::class,'insert_category'])->name('type.insert');
+Route::get('/category',[AdminController::class,'category']);
+Route::post('/category/insert',[AdminController::class,'insert_category'])->name('type.insert');
 Route::get('category/delete/{id}',[AdminController::class,'delete_category']);
 
 // Route::get('admin/team',[TeamController::class,'index']);
@@ -66,7 +68,7 @@ Route::get('category/delete/{id}',[AdminController::class,'delete_category']);
 // Route::get('admin/import',[BillController::class,'import']);
 // Route::post('bill_import', [BillController::class, 'bill_import'])->name('bill_import');
 
-Route::get('admin/logout', function () {
+Route::get('/logout', function () {
     session()->forget('ADMIN_LOGIN');
     session()->forget('ADMIN_ID');
     session()->flash('error','Logout Successfully');

@@ -20,6 +20,7 @@
 
     <!-- Main CSS-->
     <link href="{{ asset('admin_asset/css/theme.css')}}" rel="stylesheet" media="all">
+    <link href="{{ asset('admin_asset/css/style.css')}}" rel="stylesheet" media="all">
     <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> 
     <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -150,7 +151,7 @@
     </div>
     <!-- Modal -->
 
-
+    <div class="notify"></div>
 
     <!-- END PAGE CONTAINER-->
     <!-- <script src="{{asset('admin_asset/vendor/jquery-3.2.1.min.js')}}"></script> -->
@@ -159,6 +160,13 @@
     <script src="{{asset('admin_asset/vendor/slick/slick.min.js')}}"></script>
     <script src="{{asset('admin_asset/vendor/wow/wow.min.js')}}"></script>
     <script src="{{asset('admin_asset/js/main.js')}}"></script>
+    <script src="{{asset('admin_asset/js/script.js')}}"></script>
+
+    @if(session()->has('success'))
+    <script>
+        notify('{{session("success")}}', 'success');
+    </script>
+    @endif
 </body>
 
 </html>

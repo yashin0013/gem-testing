@@ -1,12 +1,15 @@
-@extends('admin/layout') @section('page_title','Gems List')
-@section('gems','active') @section('container') @if(session()->has('message'))
+@extends('admin/layout') 
+@section('page_title','Gems List')
+@section('gems','active') 
+@section('container')
+
+@if(session()->has('message'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>Success!</strong> {{ session("message") }}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-<!-- <span class="bg-success text-light p-1">{{session('message')}}</span> -->
 @endif
 
 <div class="d-flex align-items-center justify-content-between mb-3">
@@ -51,17 +54,17 @@
                 <td>{{$list->comments}}</td>
                 <td>
                     <img
-                        src="{{asset('storage/services/'.$list->image)}}"
+                        src="{{asset('storage/gems/'.$list->image)}}"
                         class="img-fluid"
                         alt=""
                     />
                 </td>
                 <td>
                     <div class="d-flex align-items-center justify-content-between" >
-                        <a href="{{url('admin/service/manage_service/'.$list->id)}}" class="btn btn-sm btn-outline-primary mr-1">
+                        <a href="{{url('admin/gem/edit/'.$list->id)}}" class="btn btn-sm btn-outline-primary mr-1">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a href="{{url('admin/service/delete/'.$list->id)}}" class="btn btn-sm btn-outline-danger">
+                        <a href="{{url('admin/gem/delete/'.$list->id)}}" class="btn btn-sm btn-outline-danger">
                             <i class="fas fa-trash-alt"></i>
                         </a>
                     </div>
