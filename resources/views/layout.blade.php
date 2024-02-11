@@ -8,7 +8,7 @@
   <title>Gem Testing India</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -22,6 +22,7 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -74,7 +75,7 @@
   @section('container')
     @show
 
-    
+
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
@@ -133,14 +134,10 @@
 
     <div class="container py-4">
       <div class="copyright">
-        &copy; Copyright <strong><span>Butterfly</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Gems</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/butterfly-free-bootstrap-theme/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by Yashin
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -148,6 +145,7 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -157,6 +155,47 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script type="text/javascript">
+
+    /*------------------------------------------
+    --------------------------------------------
+    Form Submit Event
+    --------------------------------------------
+    --------------------------------------------*/
+
+    function reportCall() {
+
+        var url = $('#ajax-form').attr("action");
+
+        let formData = document.getElementById('report_num').value;
+
+        $.ajax({
+          headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+                type:'POST',
+                url: url,
+                data: {'id': formData},
+                contentType: false,
+                processData: false,
+                success: (response) => {
+                    console.log(response);
+                    // alert('Form submitted successfully');
+                    // location.reload();
+                },
+                error: function(response){
+                    $('#ajax-form').find(".print-error-msg").find("ul").html('');
+                    $('#ajax-form').find(".print-error-msg").css('display','block');
+                    $.each( response.responseJSON.errors, function( key, value ) {
+                        $('#ajax-form').find(".print-error-msg").find("ul").append('<li>'+value+'</li>');
+                    });
+                }
+           });
+
+    };
+
+</script>
 
 </body>
 

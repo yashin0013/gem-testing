@@ -1,11 +1,11 @@
-@extends('layout') 
+@extends('layout')
 @section('container')
 <!-- Button trigger modal -->
 
 {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Launch demo modal
   </button> --}}
-  
+
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -15,7 +15,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -35,8 +35,9 @@
                 <div class="container">
                   <div class="row justify-content-center">
                     <div class="col-lg-8">
-                      <form action="" method="post">
-                        <input type="text" name="report" placeholder="Please enter your report number"><input type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" value="Submit">
+                      <form id="ajax-form" action="{{route('getreport')}}">
+                        @csrf
+                        <input type="text" id="report_num" name="report" placeholder="Please enter your report number"><input type="button" onclick="reportCall()" data-bs-toggle="modal" data-bs-target="#exampleModal" value="Submit">
                       </form>
                     </div>
                   </div>

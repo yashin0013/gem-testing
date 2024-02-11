@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GemController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [HomeController::class,'index']);
+
+Route::post('getreport',[HomeController::class,'getreport'])->name('getreport');
+
 
 
 Route::get('admin',[AdminController::class,'index']);
@@ -35,7 +37,7 @@ Route::get('/gem/delete/{id}',[GemController::class,'delete']);
 Route::get('/contact_msg',[AdminController::class,'contact_msg']);
 Route::get('/contact/delete/{id}',[AdminController::class,'delete']);
 
-// Category routes 
+// Category routes
 Route::get('/category',[AdminController::class,'category']);
 Route::post('/category/insert',[AdminController::class,'insert_category'])->name('type.insert');
 Route::get('category/delete/{id}',[AdminController::class,'delete_category']);
