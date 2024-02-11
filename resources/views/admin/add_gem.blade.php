@@ -68,7 +68,7 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="optic_char" class="control-label mb-1">Optic Char</label>
+                                <label for="optic_char" class="control-label mb-1">Optic Character</label>
                                 <input id="optic_char" name="optic_char" type="text" class="form-control" required>
                             </div>
                             @error('optic_char')

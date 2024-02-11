@@ -7,7 +7,7 @@
   </button> --}}
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -37,7 +37,7 @@
                     <div class="col-lg-8">
                       <form id="ajax-form" action="{{route('getreport')}}">
                         @csrf
-                        <input type="text" id="report_num" name="report" placeholder="Please enter your report number"><input type="button" onclick="reportCall()" data-bs-toggle="modal" data-bs-target="#exampleModal" value="Submit">
+                        <input type="text" id="report_num" name="report" placeholder="Please enter your report number"><input type="button" onclick="reportCall()" value="Submit">
                       </form>
                     </div>
                   </div>

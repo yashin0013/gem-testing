@@ -168,7 +168,7 @@
 
         var url = $('#ajax-form').attr("action");
 
-        let formData = document.getElementById('report_num').value;
+        let rId = document.getElementById('report_num').value;
 
         $.ajax({
           headers: {
@@ -176,15 +176,17 @@
         },
                 type:'POST',
                 url: url,
-                data: {'id': formData},
-                contentType: false,
-                processData: false,
+                data: {rid:rId},
+                // dataType: 'JSON',
                 success: (response) => {
                     console.log(response);
+                    $(".modal-body").html(response);
+                    $("#reportModal").modal("show");
                     // alert('Form submitted successfully');
                     // location.reload();
                 },
                 error: function(response){
+                  console.log(response.responseJSON.errors);
                     $('#ajax-form').find(".print-error-msg").find("ul").html('');
                     $('#ajax-form').find(".print-error-msg").css('display','block');
                     $.each( response.responseJSON.errors, function( key, value ) {
