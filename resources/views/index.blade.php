@@ -8,48 +8,46 @@
 
   <!-- Modal -->
   <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Natural Blue Sapphire Gemstone</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
 
         </div>
-        <div class="modal-footer">
+        {{-- <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+        </div> --}}
       </div>
     </div>
   </div>
 
- <!-- ======= Hero Section ======= -->
- <section id="hero" class="d-flex align-items-center">
+  <!-- ======= Hero Section ======= -->
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-            <div class="footer-newsletter">
-                <div class="container">
-                  <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                      <form id="ajax-form" action="{{route('getreport')}}">
-                        @csrf
-                        <input type="text" id="report_num" name="report" placeholder="Please enter your report number"><input type="button" onclick="reportCall()" value="Submit">
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img">
-          <img src="assets/img/hero-img.png" class="img-fluid" alt="">
-        </div>
+  
+
+ <section id="hero" class="d-flex align-items-center justify-content-between">
+    <div class="form-box">
+      <form id="ajax-form" action="{{route('getreport')}}" >
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="report_num" name="report" placeholder="Please enter your report number">
+          <button class="btn btn-warning text-light" type="submit" id="button-addon2">Submit</button>
+        </form>
+        <p class="form-error-msg" id="form-error"></p>
       </div>
+                      {{-- <form id="ajax-form" action="{{route('getreport')}}" >
+                        @csrf
+                        <input type="text" id="report_num" name="report" placeholder="Please enter your report number"><input type="submit" value="Submit">
+                      </form>
+                      <p class="form-error-msg"></p> --}}
     </div>
-
+    
+    <div class="hero-img">
+      <img src="assets/img/hero-image.png" class="img-fluid" alt="">
+    </div>
   </section><!-- End Hero -->
 
   <main id="main">
