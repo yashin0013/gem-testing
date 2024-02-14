@@ -62,7 +62,8 @@
   <div class="row justify-content-center mt-3">
     <div class="col-md-9">
       <h3 class="text-center">Have Question? Send Us</h3>
-      <form>
+      <form id="contact-form" onsubmit="event.preventDefault(); contactSubmit()" action="{{route('contact.store')}}">
+        @csrf
         <div class="row">
           <div class="mb-3 col-6">
             <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
@@ -78,7 +79,7 @@
           <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
         </div>
         <div class="mb-3 col-12">
-          <textarea class="form-control" placeholder="Type your message here"></textarea>
+          <textarea class="form-control" name="message" placeholder="Type your message here"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>

@@ -1535,3 +1535,33 @@ section {
   width: 100%;
   display: none;
 }
+
+
+/* Flash message css */
+.notify {
+    position: fixed;
+    right: 5px;
+    top: 15px;
+    z-index: 9999;
+  }
+  .notify > div {
+    padding: 10px 15px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.9);
+  }
+  .notify > div.success {
+    background: #28a745;
+  }
+  .notify > div.error {
+    background: #dc3545;
+  }
+  .notify > div.warning {
+    background: #ffc107;
+    color: #000;
+  }
+  .notify > div.info {
+    background: #17a2b8;
+  }

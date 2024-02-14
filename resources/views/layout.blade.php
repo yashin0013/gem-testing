@@ -143,7 +143,7 @@
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+  <div class="notify"></div>
   <!-- Vendor JS Files -->
 
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -155,44 +155,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
-  <script type="text/javascript">
-
-    /*------------------------------------------
-    --------------------------------------------
-    Form Submit Event
-    --------------------------------------------
-    --------------------------------------------*/
-    document.getElementById("ajax-form").onsubmit = function() {reportCall()};
-
-    function reportCall() {
-      event.preventDefault();
-        var url = $('#ajax-form').attr("action");
-
-        let rId = document.getElementById('report_num').value;
-
-        $.ajax({
-          headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-                type:'POST',
-                url: url,
-                data: {rid:rId},
-                success: (response) => {
-                    $(".modal-body").html(response);
-                    $("#reportModal").modal("show");
-                    $('.form-error-msg').css('display','none');
-                   
-                },
-                error: function(response){
-                    $('.form-error-msg').css('display','block');
-                    $('.form-error-msg').html(response.responseJSON.errors.rid[0]);
-                }
-           });
-
-    };
-
-</script>
+  <script src="assets/js/script.js"></script>
 
 </body>
 

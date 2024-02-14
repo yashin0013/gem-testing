@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class,'index']);
 
 Route::post('getreport',[HomeController::class,'getreport'])->name('getreport');
+Route::post('contact/store',[HomeController::class,'contact'])->name('contact.store');
 
 
 
