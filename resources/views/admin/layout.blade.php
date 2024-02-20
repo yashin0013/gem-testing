@@ -9,7 +9,6 @@
     <title>@yield('page_title')</title>
     <link href="{{asset('assets/img/icon.jpeg')}}" rel="icon">
     <!-- Fontfaces CSS-->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="{{ asset('admin_asset/css/font-face.css')}}" rel="stylesheet" media="all">
     <link href="{{ asset('admin_asset/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet"
         media="all">
@@ -22,9 +21,9 @@
     <link href="{{ asset('admin_asset/css/theme.css')}}" rel="stylesheet" media="all">
     <link href="{{ asset('admin_asset/css/style.css')}}" rel="stylesheet" media="all">
     <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> 
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
-        
+
 </head>
 
 <body>
@@ -56,7 +55,7 @@
                             <a href="{{url('admin/contact_msg')}}">
                                 <i class="fas fa-list"></i>Contact Masseges</a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </nav>
@@ -90,7 +89,7 @@
                             <a href="{{url('admin/category')}}">
                             <i class="fab fa-usps"></i>Category</a>
                         </li>
-                       
+
                     </ul>
                 </nav>
             </div>

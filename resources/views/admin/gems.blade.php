@@ -1,6 +1,6 @@
-@extends('admin/layout') 
+@extends('admin/layout')
 @section('page_title','Gems List')
-@section('gems','active') 
+@section('gems','active')
 @section('container')
 
 @if(session()->has('message'))
@@ -22,6 +22,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Download</th>
                 <th>Report Number</th>
                 <th>Weight</th>
                 <th>dimension</th>
@@ -41,6 +42,11 @@
             @foreach($gems as $list)
             <tr>
                 <td>{{$list->id}}</td>
+                <td>
+                    <a href="{{url('admin/gem/edit/'.$list->id)}}" class="btn btn-sm btn-outline-primary mr-1">
+                        <i class="fa-solid fa-download"></i>
+                </a>
+            </td>
                 <td>{{$list->report_number}}</td>
                 <td>{{$list->weight}}</td>
                 <td>{{$list->dimension}}</td>

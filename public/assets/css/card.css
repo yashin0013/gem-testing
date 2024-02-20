@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 70%;
+    margin: 20px;
+    border: 2px solid red;
+}
+
+/* header section  */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header img {
+    height: 25vh;
+}
+
+.header h2 {
+    font-size: 46px;
+    position: relative;
+    color: #2b2828;
+    text-transform: uppercase;
+    /* padding-left: 20px; */
+}
+
+.header h2::before {
+    content: "";
+    position: absolute;
+    top: -28px;
+    left: -14px;
+    height: 16vh;
+    width: 2px;
+    background-color: #958682;
+}
+
+.header h4 {
+    font-size: 26px;
+    background-color: #a56527;
+    color: white;
+    padding: 15px 45px 15px 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+/* Body section  */
+
+.body .name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.body .name hr {
+    border: none;
+    height: 2px;
+    background-color: #958682;
+    width: 100%;
+}
+
+.body .name p {
+    width: fit-content;
+    text-wrap: nowrap;
+    margin: 10px;
+    text-align: center;
+    font-size: 26px;
+    color: #463e3c;
+}
+
+.body .desc {
+    display: flex;
+    justify-content: space-between;
+    background-image: url("/assets/img/img-bg.png");
+    /* background-color: #cccccc; */
+    /* height: 500px; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 400px auto;
+    position: relative;
+    /* align-items: center; */
+}
+
+.body .desc .table {
+    display: grid;
+    grid-template-columns: auto auto;
+    /* background-color: #2196f3; */
+    /* padding: 10px; */
+    width: 50%;
+}
+
+.body .desc .table p {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    /* border: 1px solid rgba(0, 0, 0, 0.8); */
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.body .desc .product-img {
+    width: 250px;
+    height: 250px;
+}
+
+.body .desc .product-img img {
+    width: 100%;
+    height: auto;
+}
+
+.body .desc .product-img .stamp {
+    position: absolute;
+    bottom: 10px;
+    right: 60px;
+    width: 180px;
+}
+
