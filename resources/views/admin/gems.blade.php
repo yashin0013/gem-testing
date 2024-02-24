@@ -43,7 +43,7 @@
             <tr>
                 <td>{{$list->id}}</td>
                 <td>
-                    <a href="{{url('admin/gem/edit/'.$list->id)}}" class="btn btn-sm btn-outline-primary mr-1">
+                    <a href="{{url('admin/gem/show/'.$list->id)}}" target="_blank" class="btn btn-sm btn-outline-primary mr-1">
                         <i class="fa-solid fa-download"></i>
                 </a>
             </td>

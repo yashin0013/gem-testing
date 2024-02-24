@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			console.log(base64image);
 			let pdf = new jsPDF('p', 'px', [1600, 1100]);
 			pdf.addImage(base64image, 'PNG', 15, 15, 945, 785);
-			pdf.save('webtylepress-two.pdf');
+			pdf.save('card.pdf');
 		});
 	});
 

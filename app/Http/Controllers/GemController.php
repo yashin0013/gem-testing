@@ -5,51 +5,50 @@ namespace App\Http\Controllers;
 use App\Models\Gem;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Gd\Driver;
-use Intervention\Image\Typography\FontFactory;
-use PDF;
+// use Intervention\Image\ImageManager;
+// use Intervention\Image\Drivers\Gd\Driver;
+// use Intervention\Image\Typography\FontFactory;
+// use PDF;
 
 class GemController extends Controller
 {
     function index()
     {
-        $data['gems'] = Gem::paginate(10);
+        $data['gems'] = Gem::latest()->paginate(5);
         return view('admin/gems', $data);
     }
 
-    public function test(){
-
+    public function show($id){
         // $pdf = PDF::loadView('admin.test');
-
         // return $pdf->stream('itsolutionstuff.pdf');
-        return view('admin.test');
+        $data['gem'] = Gem::find($id);
+        return view('admin.card', $data);
     }
 
-    public function image_edit()
-    {
-        $manager = new ImageManager(Driver::class);
-        // create test image
-        $image = $manager->read('images/gti.jpg');
+    // public function image_edit()
+    // {
+    //     $manager = new ImageManager(Driver::class);
+    //     // create test image
+    //     $image = $manager->read('images/gti.jpg');
 
 
-        // write text to image
-        $image->text('This is the text', 350, 250, function (FontFactory $font) {
-            $font->filename('assets/fonts/Ldfcomicsans-jj7l.ttf');
-            $font->color('#373737');
-            $font->size(35.5);
-            $font->align('center');
-            $font->valign('middle');
-            $font->lineHeight(2.6);
-            $font->angle(0);
-        });
-        $imageName = time().".png";
-        $destinationPath = public_path('images/');
+    //     // write text to image
+    //     $image->text('This is the text', 350, 250, function (FontFactory $font) {
+    //         $font->filename('assets/fonts/Ldfcomicsans-jj7l.ttf');
+    //         $font->color('#373737');
+    //         $font->size(35.5);
+    //         $font->align('center');
+    //         $font->valign('middle');
+    //         $font->lineHeight(2.6);
+    //         $font->angle(0);
+    //     });
+    //     $imageName = time().".png";
+    //     $destinationPath = public_path('images/');
 
-        $image->save($destinationPath.$imageName);
+    //     $image->save($destinationPath.$imageName);
 
-        return '<img src="/images/'.$imageName.'" alt="Girl in a jacket" width="800" height="600">';
-    }
+    //     return '<img src="/images/'.$imageName.'" alt="Girl in a jacket" width="800" height="600">';
+    // }
 
     public function create()
     {

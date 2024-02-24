@@ -17,16 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/run', function () {
-    Artisan::call("migrate");
+    Artisan::call("db:seed");
 });
 
 Route::get('/', [HomeController::class,'index']);
 
 Route::post('getreport',[HomeController::class,'getreport'])->name('getreport');
 Route::post('contact/store',[HomeController::class,'contact'])->name('contact.store');
-
-Route::get('test',[GemController::class,'test']);
-
 
 
 Route::get('admin',[AdminController::class,'index']);
@@ -40,8 +37,9 @@ Route::get('/gems',[GemController::class,'index']);
 Route::get('/gem/create',[GemController::class,'create']);
 Route::post('/gem/store',[GemController::class,'store'])->name('gem.store');
 Route::get('/gem/delete/{id}',[GemController::class,'delete']);
+Route::get('/gem/show/{id}',[GemController::class,'show']);
 
-Route::get('/image',[GemController::class,'image_edit']);
+// Route::get('/image',[GemController::class,'image_edit']);
 
 
 Route::get('/contact_msg',[AdminController::class,'contact_msg']);
