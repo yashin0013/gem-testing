@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\Typography\FontFactory;
+use PDF;
 
 class GemController extends Controller
 {
@@ -18,6 +19,10 @@ class GemController extends Controller
     }
 
     public function test(){
+
+        // $pdf = PDF::loadView('admin.test');
+
+        // return $pdf->stream('itsolutionstuff.pdf');
         return view('admin.test');
     }
 

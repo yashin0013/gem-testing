@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/run', function () {
+    Artisan::call("migrate");
+});
+
 Route::get('/', [HomeController::class,'index']);
 
 Route::post('getreport',[HomeController::class,'getreport'])->name('getreport');

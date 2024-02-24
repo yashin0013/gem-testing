@@ -13,7 +13,7 @@
 <body>
     <div class="main">
         <div class="header">
-            <img src="/assets/img/logo2.png" alt="">
+            <img src="assets/img/logo2.png" alt="">
             <h2>Gem Testing India</h2>
             <h4>Gmological <br> Leboratory</h4>
         </div>
@@ -79,15 +79,36 @@
                     </p>
 
                 </div>
+
                 <div class="product-img">
-                    <img src="/images/1708011168.jpg" alt="">
+                    <img src="images/1708011168.jpg" alt="">
                     <div class="stamp">
-                        <img src="/assets/img/SEAL.png" alt="">
+                        <img src="assets/img/SEAL.png" alt="">
                     </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="title">
+                    <p>Natiral Emerald</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <button id="btn-one" class="btn btn-success btn-lg">
+        Download PDF
+            </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+        integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="assets/js/cardScript.js"></script>
 
 </body>
 

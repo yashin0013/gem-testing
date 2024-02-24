@@ -4,9 +4,9 @@
 }
 
 .main {
-    width: 70%;
+    /*width: 70%;*/
     margin: 20px;
-    border: 2px solid red;
+    /*border: 2px solid red;*/
 }
 
 /* header section  */
@@ -14,26 +14,31 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+   justify-content: space-between;
 }
 
 .header img {
-    height: 25vh;
+    height: 100px;
+    /* float: left;
+    clear: both; */
+    width: 120px;
 }
 
 .header h2 {
-    font-size: 46px;
+    font-size: 40px;
     position: relative;
     color: #2b2828;
     text-transform: uppercase;
-    /* padding-left: 20px; */
+    /* float: left;
+    clear: both; */
+    padding-left: 20px;
 }
 
 .header h2::before {
     content: "";
     position: absolute;
-    top: -28px;
-    left: -14px;
+    top: -24px;
+    left: -10px;
     height: 16vh;
     width: 2px;
     background-color: #958682;
@@ -46,6 +51,8 @@
     padding: 15px 45px 15px 15px;
     border-radius: 5px;
     text-transform: uppercase;
+    /* float: right;
+    clear: both; */
 }
 
 /* Body section  */
@@ -113,8 +120,16 @@
 
 .body .desc .product-img .stamp {
     position: absolute;
-    bottom: 10px;
+    bottom: -50px;
     right: 60px;
     width: 180px;
 }
 
+.footer .title p{
+    display: inline-block;
+    border: 2px solid black;
+    padding: 8px 90px;
+    margin-left: 10vh;
+    font-size: 25px;
+    font-weight: bolder;
+}
