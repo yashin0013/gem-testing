@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="product-img">
-                        <img src="{{asset('storage/gems/'.$gem->image)}}" alt="">
+                        <img src="{{asset('images/gems/'.$gem->image)}}" alt="">
                         <div class="stamp">
                             <img src="/assets/img/SEAL.png" alt="">
                         </div>

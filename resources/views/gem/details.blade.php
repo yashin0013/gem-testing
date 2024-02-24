@@ -52,7 +52,7 @@
     </div>
     <div class="col-md-4">
       <div class="gem-img-box">
-        <img src="{{asset('storage/gems/'.$gem->image)}}" class="img-fluid" alt="" />
+        <img src="{{asset('images/gems/'.$gem->image)}}" class="img-fluid" alt="" />
       </div>
       <div class="img-box">
         <img src="{{asset('assets/img/img.png')}}" class="img-fluid" alt="" />
@@ -71,7 +71,7 @@
           <div class="mb-3 col-6">
             <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
           </div>
-        
+
         <div class="mb-3 col-6">
           <input type="phone" class="form-control" id="phone" name="phone" placeholder="Your Phone Number">
         </div>

@@ -60,7 +60,7 @@
                 <td>{{$list->comments}}</td>
                 <td>
                     <img
-                        src="{{asset('storage/gems/'.$list->image)}}"
+                        src="{{asset('images/gems/'.$list->image)}}"
                         class="img-fluid"
                         alt=""
                     />

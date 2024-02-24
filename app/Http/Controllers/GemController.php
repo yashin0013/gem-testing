@@ -85,13 +85,17 @@ class GemController extends Controller
         $gem->species = $request->species;
         $gem->comments = $request->comments;
         if ($request->hasfile('image')) {
+
+
+
             $image = $request->file('image');
             // $image_name = $image->getClientOriginalName();
             // $ext = $image->getClientOriginalExtension();
-            $ext = $image->extension();
-            $image_name = time() . '.' . $ext;
-            $image->storeAs('public/gems', $image_name);
-            $gem->image = $image_name;
+            $destinationPath = 'images/gems';
+            $gemImage = time(). "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $gemImage);
+            $gem->image = $gemImage;
+            
         }
         $gem->save();
         $request->session()->flash('success', 'New Gem has been added successfully');

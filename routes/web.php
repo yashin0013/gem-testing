@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/run', function () {
-    Artisan::call("db:seed");
-});
+// Route::get('/run', function () {
+//     Artisan::call("db:seed");
+// });
 
 Route::get('/', [HomeController::class,'index']);
 

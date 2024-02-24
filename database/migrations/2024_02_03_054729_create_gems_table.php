@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('gems', function (Blueprint $table) {
             $table->id();
             $table->string('report_number');
-            $table->integer('weight');
-            $table->integer('dimension');
+            $table->string('weight');
+            $table->string('dimension');
             $table->string('color');
             $table->string('shape_cut');
             $table->string('optic_char');
