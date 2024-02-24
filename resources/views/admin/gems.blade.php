@@ -57,7 +57,7 @@
                 <td>{{$list->specific_gravity}}</td>
                 <td>{{$list->microscope_view}}</td>
                 <td>{{$list->species}}</td>
-                <td>{{$list->comments}}</td>
+                <td>{{ (strlen($list->comments) > 20) ? substr($list->comments, 0 , 20).'...' : $list->comments }}</td>
                 <td>
                     <img
                         src="{{asset('images/gems/'.$list->image)}}"

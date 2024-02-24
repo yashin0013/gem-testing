@@ -66,7 +66,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="{{url('admin/contact_msg')}}">
-                    <h3> {{Config::get('contstants.SITE_NAME')}}</h3>
+                    <h3> {{Config::get('constants.SITE_NAME')}}</h3>
                     <!-- <img src="{{ asset('admin_asset/images/icon/logo.png')}}" alt="Cool Admin" /> -->
                 </a>
             </div>
@@ -85,10 +85,10 @@
                             <a href="{{url('admin/gems')}}">
                             <i class="fab fa-usps"></i>Gems</a>
                         </li>
-                        <li class="@yield('category')">
+                        {{-- <li class="@yield('category')">
                             <a href="{{url('admin/category')}}">
                             <i class="fab fa-usps"></i>Category</a>
-                        </li>
+                        </li> --}}
 
                     </ul>
                 </nav>
@@ -118,7 +118,7 @@
 
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="{{url('/')}}">
+                                                    <a href="{{url('/')}}" target="_blank">
                                                         Visit Website</a>
                                                 </div>
                                             </div>

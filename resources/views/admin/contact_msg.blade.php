@@ -34,17 +34,16 @@
         </thead>
         <tbody>
              <?php $i=1 ?>
-            @foreach($msg as $list)
+            @foreach ($msgs as $msg)
             <tr>
                 <td>{{$i++}}</td>
-                <td>{{$list->name}}</td>
-                <td>{{$list->email}}</td>
-                <td>{{$list->phone}}</td>
-                <td>{{$list->subject}}</td>
-                <td>{{$list->msg}}</td>
+                <td>{{$msg->name}}</td>
+                <td>{{$msg->email}}</td>
+                <td>{{$msg->phone}}</td>
+                <td>{{$msg->subject}}</td>
+                <td>{{$msg->message}}</td>
                 <td>
-                    <!-- <a href="{{url('admin/color/manage_color/'.$list->id)}}" class="btn btn-primary mr-1">Edit</a> -->
-                    <a href="{{url('admin/contact/delete/'.$list->id)}}" class="btn btn-danger">Delete</a>
+                    <a href="{{url('admin/contact/delete/'.$msg->id)}}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             @endforeach

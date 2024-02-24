@@ -36,6 +36,8 @@ Route::view('/dashboard','admin/dashboard');
 Route::get('/gems',[GemController::class,'index']);
 Route::get('/gem/create',[GemController::class,'create']);
 Route::post('/gem/store',[GemController::class,'store'])->name('gem.store');
+Route::get('/gem/edit/{id}',[GemController::class,'edit']);
+Route::post('/gem/update',[GemController::class,'update'])->name('gem.update');
 Route::get('/gem/delete/{id}',[GemController::class,'delete']);
 Route::get('/gem/show/{id}',[GemController::class,'show']);
 

@@ -29,7 +29,7 @@
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
-                           <h3> {{Config::get('contstants.SITE_NAME')}}</h3>
+                           <h3> {{Config::get('constants.SITE_NAME')}}</h3>
                             <!-- <a href="#">
                                 <img src="{{url('admin_asset/images/icon/logo.png')}}" alt="CoolAdmin">
                             </a> -->

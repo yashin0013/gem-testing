@@ -14,7 +14,7 @@ class GemController extends Controller
 {
     function index()
     {
-        $data['gems'] = Gem::latest()->paginate(5);
+        $data['gems'] = Gem::orderBy('id', 'desc')->paginate(5);
         return view('admin/gems', $data);
     }
 
@@ -85,9 +85,6 @@ class GemController extends Controller
         $gem->species = $request->species;
         $gem->comments = $request->comments;
         if ($request->hasfile('image')) {
-
-
-
             $image = $request->file('image');
             // $image_name = $image->getClientOriginalName();
             // $ext = $image->getClientOriginalExtension();
@@ -95,11 +92,59 @@ class GemController extends Controller
             $gemImage = time(). "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $gemImage);
             $gem->image = $gemImage;
-            
+
         }
         $gem->save();
         $request->session()->flash('success', 'New Gem has been added successfully');
         return redirect('admin/gems');
+    }
+
+    public function edit($id){
+        $data['gem'] = Gem::find($id);
+        return view('admin.edit_gem', $data);
+    }
+
+    public function update(Request $request) {
+        $request->validate([
+            'report_number' => 'required',
+            'id' => 'required',
+            'weight' => 'required',
+            'dimension' => 'required',
+            'color' => 'required',
+            'shape_cut' => 'required',
+            'optic_char' => 'required',
+            'refractive_index' => 'required',
+            'specific_gravity' => 'required',
+            'microscope_view' => 'required',
+            'species' => 'required',
+        ]);
+
+        $gem = Gem::find($request->id);
+        $gem->report_number = $request->report_number;
+        $gem->weight = $request->weight;
+        $gem->dimension = $request->dimension;
+        $gem->color = $request->color;
+        $gem->shape_cut = $request->shape_cut;
+        $gem->optic_char = $request->optic_char;
+        $gem->refractive_index = $request->refractive_index;
+        $gem->specific_gravity = $request->specific_gravity;
+        $gem->microscope_view = $request->microscope_view;
+        $gem->species = $request->species;
+        $gem->comments = $request->comments;
+        if ($request->hasfile('image')) {
+            $image = $request->file('image');
+            // $image_name = $image->getClientOriginalName();
+            // $ext = $image->getClientOriginalExtension();
+            $destinationPath = 'images/gems';
+            $gemImage = time(). "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $gemImage);
+            $gem->image = $gemImage;
+
+        }
+        $gem->save();
+        $request->session()->flash('success', 'Gem has been updated successfully');
+        return redirect('admin/gems');
+
     }
 
     public function delete(Request $request, $id)

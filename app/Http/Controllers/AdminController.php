@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use App\Models\Contact;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -27,7 +28,7 @@ class AdminController extends Controller
         // $result = Admin::where(['email'=>$email,'password'=>$password])->get();
         $result = Admin::where(['email'=>$email])->first();
         if ($result) {
-            if (Hash::check($request->post('password'),$result->password)) {
+            if (Hash::check($password,$result->password)) {
                 $request->session()->put('ADMIN_LOGIN',true);
                 $request->session()->put('ADMIN_ID',$result->id);
                 return redirect('admin/dashboard');
@@ -44,50 +45,17 @@ class AdminController extends Controller
 
     public function contact_msg()
     {
-        $message = DB::table('contacts')->get();
-        return view('admin/contact_msg', ['msg' => $message]);
+        $data['msgs'] = Contact::orderBy('id', 'desc')->get();
+        return view('admin/contact_msg', $data);
     }
-    
+
     public function delete(Request $request,$id)
     {
-        DB::table('contacts')->where('id', $id)->delete();
-        // $model=contact::find($id);
-        // $model->delete();
-        $request->session()->flash('message','Message Deleted');
+        // DB::table('contacts')->where('id', $id)->delete();
+        $model=Contact::find($id);
+        $model->delete();
+        $request->session()->flash('success', 'Message has been deleted successfully');
         return redirect('admin/contact_msg');
-
-    }
-
-    public function category()
-    {
-        $data['categories'] = DB::table('category')->get();
-        return view('admin/category',$data);
-
-    }
-
-    public function logistic()
-    {
-        // $data['categories'] = DB::table('category')->get();
-        return view('admin/logistic');
-
-    }
-
-    public function insert_category(Request $req)
-    {
-        DB::table('category')->insert([
-            'name' => $req->post('name'),
-            $req->post("type") => 1,
-        ]);
-        $req->session()->flash('message','Type Inserted');
-        return redirect('admin/category');
-
-    }
-
-    public function delete_category(Request $req,$id)
-    {
-        DB::table('category')->where('id', $id)->delete();
-        $req->session()->flash('message','Type Deleted');
-        return redirect('admin/category');
 
     }
 
