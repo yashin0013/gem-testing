@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 // use Intervention\Image\Drivers\Gd\Driver;
 // use Intervention\Image\Typography\FontFactory;
 // use PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\View;
+use Spipu\Html2Pdf\Html2Pdf;
+use App\Imports\GemsImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class GemController extends Controller
 {
@@ -19,10 +24,22 @@ class GemController extends Controller
     }
 
     public function show($id){
-        // $pdf = PDF::loadView('admin.test');
-        // return $pdf->stream('itsolutionstuff.pdf');
         $data['gem'] = Gem::find($id);
-        return view('admin.card', $data);
+
+         $pdf = Pdf::loadView('admin.card2', $data);
+         return $pdf->stream('invoice.pdf');
+
+        // $pdf = PDF::loadView('admin.card2',$data);
+        // return $pdf->stream('itsolutionstuff.pdf');
+
+        // $html = View::make('admin.card2',$data)->render();
+
+        // $html2pdf = new Html2Pdf();
+        // $html2pdf->writeHTML($html);
+        // $html2pdf->output('sample.pdf');
+
+        // $data['gem'] = Gem::find($id);
+        // return view('admin.card', $data);
     }
 
     // public function image_edit()
@@ -153,5 +170,15 @@ class GemController extends Controller
         $gem->delete();
         $request->session()->flash('success', 'Gem has been deleted successfully');
         return redirect('admin/gems');
+    }
+
+    public function import_page(){
+        return view('admin/import');
+    }
+
+    public function import()
+    {
+        Excel::import(new GemsImport,request()->file('file'));
+        return back();
     }
 }

@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Image show</title>
-    <link href="{{ url('assets/css/card.css') }}" rel="stylesheet">
-
+    <link href="{{ public_path('/assets/css/card.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -15,7 +15,8 @@
     <div class="container">
         <div class="main" id="main">
             <div class="header">
-                <img src="{{ url('assets/img/logo2.png') }}" alt="">
+                <img src="{{ public_path('/assets/img/logo2.png')}}" alt="">
+                <span></span>
                 <h2>Gem Testing India</h2>
                 <h4>Gmological <br> Leboratory</h4>
             </div>
@@ -63,9 +64,9 @@
                     </div>
 
                     <div class="product-img">
-                        <img src="{{asset('images/gems/'.$gem->image)}}" alt="">
+                        <img src="{{ public_path('/images/gems/'.$gem->image) }}" alt="">
                         <div class="stamp">
-                            <img src="/assets/img/SEAL.png" alt="">
+                            <img src="{{ public_path('assets/img/SEAL.png') }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -76,28 +77,7 @@
                 </div>
             </div>
         </div>
-
-        {{-- <div class="btn-box">
-            <button id="btn-one" class="btn">
-                Download PDF
-                </button>
-        </div> --}}
     </div>
-
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
-
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
-        integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    ></script> --}}
-
-    {{-- <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script> --}}
-
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script> --}}
-
-    {{-- <script src="{{ url('assets/js/cardScript.js') }}"></script> --}}
 
 </body>
 

@@ -85,6 +85,10 @@
                             <a href="{{url('admin/gems')}}">
                             <i class="fab fa-usps"></i>Gems</a>
                         </li>
+                        <li class="@yield('import')">
+                            <a href="{{url('admin/import_page')}}">
+                            <i class="fa-solid fa-file-import"></i>Bulk Import</a>
+                        </li>
                         {{-- <li class="@yield('category')">
                             <a href="{{url('admin/category')}}">
                             <i class="fab fa-usps"></i>Category</a>
