@@ -37,17 +37,17 @@
                                 <input id="file" name="file" type="file" class="form-control-file" required>
                             </div>
                             @error('file')
-                            <div class="alert alert-danger">{{ $message }}</div>
+                            <div class="alert alert-danger py-1 px-2 text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                     </div>
 
                     <div>
                         <button id="payment-button" type="submit" class="btn btn-sm btn-info">
-                            <span id="payment-button-amount">Submit</span>
+                            <span id="payment-button-amount">Upload</span>
                             <span id="payment-button-sending" style="display:none;">Sending…</span>
                         </button>
-                        <a href="{{url('assets/sample/sample.csv')}}" class="btn btn-sm btn-warning text-light" download>Sample Excel File</a>
+                        <a href="{{url('assets/sample/sample.csv')}}" class="btn btn-sm btn-success" download>Download Sample CSV File</a>
                     </div>
                     <!-- <input type="hidden" name="id" value=""> -->
                 </form>
