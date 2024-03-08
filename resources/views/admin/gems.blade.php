@@ -22,7 +22,8 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Download</th>
+                <th>Action</th>
+                <!-- <th>Download</th> -->
                 <th>Report Number</th>
                 <th>Weight</th>
                 <th>dimension</th>
@@ -35,7 +36,6 @@
                 <th>species</th>
                 <th>comments</th>
                 <th>Image</th>
-                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -43,10 +43,20 @@
             <tr>
                 <td>{{$list->id}}</td>
                 <td>
+                    <div class="d-flex align-items-center justify-content-between" >
+                        <a href="{{url('admin/gem/edit/'.$list->id)}}" class="btn btn-sm btn-outline-primary mr-1">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="{{url('admin/gem/delete/'.$list->id)}}" class="btn btn-sm btn-outline-danger">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </div>
+                </td>
+                <!-- <td>
                     <a href="{{url('admin/gem/show/'.$list->id)}}" target="_blank" class="btn btn-sm btn-outline-primary mr-1">
                         <i class="fa-solid fa-download"></i>
                 </a>
-            </td>
+            </td> -->
                 <td>{{$list->report_number}}</td>
                 <td>{{$list->weight}}</td>
                 <td>{{$list->dimension}}</td>
@@ -65,16 +75,7 @@
                         alt=""
                     />
                 </td>
-                <td>
-                    <div class="d-flex align-items-center justify-content-between" >
-                        <a href="{{url('admin/gem/edit/'.$list->id)}}" class="btn btn-sm btn-outline-primary mr-1">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                        <a href="{{url('admin/gem/delete/'.$list->id)}}" class="btn btn-sm btn-outline-danger">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
-                    </div>
-                </td>
+               
             </tr>
             @endforeach
         </tbody>

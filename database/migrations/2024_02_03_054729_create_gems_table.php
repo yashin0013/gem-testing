@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('gems', function (Blueprint $table) {
             $table->id();
-            $table->string('report_number');
+            $table->string('report_number')->unique();
             $table->string('weight');
             $table->string('dimension');
             $table->string('color');
