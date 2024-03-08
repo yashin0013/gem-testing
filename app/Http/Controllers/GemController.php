@@ -195,4 +195,25 @@ class GemController extends Controller
         $request->session()->flash('success', 'Gems imported successfully');
         return redirect('admin/gems');
     }
+
+    public function download()
+    {
+        // File path
+        $filePath = public_path('assets/sample/sample.csv');
+
+        // Check if the file exists
+        if (file_exists($filePath)) {
+            // Set headers for force download
+            $headers = [
+                'Content-Type' => 'application/csv',
+                'Content-Disposition' => 'attachment; filename="' . basename($filePath) . '"',
+            ];
+
+            // Return the file as response
+            return response()->download($filePath, basename($filePath), $headers);
+        } else {
+            // File not found
+            abort(404);
+        }
+    }
 }

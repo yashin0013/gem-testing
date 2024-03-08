@@ -42,6 +42,7 @@ Route::get('/gem/delete/{id}',[GemController::class,'delete']);
 Route::get('/gem/show/{id}',[GemController::class,'show']);
 Route::get('/import_page',[GemController::class,'import_page']);
 Route::post('/gem/import',[GemController::class,'import'])->name('gem.import');
+Route::get('/sample-csv',[GemController::class,'download']);
 
 // Route::get('/image',[GemController::class,'image_edit']);
 

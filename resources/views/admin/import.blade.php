@@ -47,7 +47,7 @@
                             <span id="payment-button-amount">Upload</span>
                             <span id="payment-button-sending" style="display:none;">Sending…</span>
                         </button>
-                        <a href="{{url('assets/sample/sample.csv')}}" class="btn btn-sm btn-success" download>Download Sample CSV File</a>
+                        <a href="{{url('admin/sample-csv')}}" class="btn btn-sm btn-success" download>Download Sample CSV File</a>
                     </div>
                     <!-- <input type="hidden" name="id" value=""> -->
                 </form>
