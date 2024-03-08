@@ -182,48 +182,11 @@ class GemController extends Controller
         $request->validate([
             'file' => 'required|file|mimes:xls,xlsx,csv',
         ]);
-/*
-        // Read Excel data
-    $file = $request->file('file');
-    $import = new GemsImport();
-    $importedData = Excel::toCollection($import, $file);
-
-
-    // Validate imported data
-$errors = [];
-foreach ($importedData[0] as $index => $row) {
-    $validator = Validator::make($row->toArray(), [
-        '*.report_number' => 'required',
-            '*.weight' => 'required',
-            '*.dimension' => 'required',
-            '*.color' => 'required',
-            '*.shape_cut' => 'required',
-            '*.optic_char' => 'required',
-            '*.refractive_index' => 'required',
-            '*.specific_gravity' => 'required',
-            '*.microscope_view' => 'required',
-            '*.species' => 'required',
-            'comments' => 'required',
-    ]);
-    if ($validator->fails()) {
-        $errors[] = sprintf("Row %d: %s", $index + 1, implode(', ', $validator->errors()->all()));
-    }
-}
-dd($errors);
-// Handle validation errors
-if (!empty($errors)) {
-    // Redirect back with errors if any
-    return redirect()->back()->withErrors($errors);
-}
-
-        */
 
         $import = new GemsImport();
         Excel::import($import, $request->file('file'));
     
         $validationErrors = $import->getValidationErrors();
-
-        // dd($validationErrors);
     
         if (!empty($validationErrors)) {
             return redirect()->back()->with('validationErrors', $validationErrors);

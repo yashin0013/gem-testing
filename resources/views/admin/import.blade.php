@@ -47,6 +47,7 @@
                             <span id="payment-button-amount">Submit</span>
                             <span id="payment-button-sending" style="display:none;">Sending…</span>
                         </button>
+                        <a href="{{url('assets/sample/sample.csv')}}" class="btn btn-sm btn-warning text-light" download>Sample Excel File</a>
                     </div>
                     <!-- <input type="hidden" name="id" value=""> -->
                 </form>
