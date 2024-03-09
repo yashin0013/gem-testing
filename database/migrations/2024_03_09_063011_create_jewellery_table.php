@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('jewellery', function (Blueprint $table) {
             $table->id();
             $table->string('report_number')->unique();
-            $table->smallInteger('type');
+            $table->smallInteger('type')->default(3);
             $table->smallInteger('gross_wt');
             $table->smallInteger('gold_wt');
             $table->smallInteger('dia_wt');

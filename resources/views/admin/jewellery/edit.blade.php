@@ -14,78 +14,83 @@
                 </div>
                 <hr>
 
-                <form action="{{ route('diamonds.update', $diamond->id) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('jewellery.update', $jewellery->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="row">
-                       
-                    <div class="col-md-6">
+
+                    @if ($errors->any())
+                            <div class="col-md-12">
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+
+                            @endif
+
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="report_number">Report Number:</label>
-                                <input type="text" class="form-control" name="report_number" id="report_number" value="{{ $diamond->report_number }}">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="description">Description:</label>
-                                <input type="text" class="form-control" name="description" id="description" value="{{ $diamond->description }}">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="shape_cut">Shape Cut:</label>
-                                <input type="text" class="form-control" name="shape_cut" id="shape_cut" value="{{ $diamond->shape_cut }}">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="dimension">Dimension:</label>
-                                <input type="text" class="form-control" name="dimension" id="dimension" value="{{ $diamond->dimension }}">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="weight">Weight:</label>
-                                <input type="text" class="form-control" name="weight" id="weight" value="{{ $diamond->weight }}">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="clarity_grade">Clarity Grade:</label>
-                                <input type="text" class="form-control" name="clarity_grade" id="clarity_grade" value="{{ $diamond->clarity_grade }}">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="color_grade">Color Grade:</label>
-                                <input type="text" class="form-control" name="color_grade" id="color_grade" value="{{ $diamond->color_grade }}">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="cut_prop">Cut Prop:</label>
-                                <input type="text" class="form-control" name="cut_prop" id="cut_prop" value="{{ $diamond->cut_prop }}">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="finish">Finish:</label>
-                                <input type="text" class="form-control" name="finish" id="finish" value="{{ $diamond->finish }}">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="fluoresc">Fluoresc:</label>
-                                <input type="text" class="form-control" name="fluoresc" id="fluoresc" value="{{ $diamond->fluoresc }}">
+                                <input type="text" class="form-control" name="report_number" id="report_number" value="{{ $jewellery->report_number }}">
                             </div>
                         </div>
 
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="comments" class="control-label mb-1">Comments</label>
-                                <textarea name="comments" class="form-control">{{ $diamond->comments }}</textarea>
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="gross_wt">Gross Weight:</label>
+                                    <input type="text" class="form-control" name="gross_wt" id="gross_wt" value="{{ $jewellery->gross_wt }}">
+                                </div>
                             </div>
-                           
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="gold_wt">Gold Weight:</label>
+                                    <input type="text" class="form-control" name="gold_wt" id="gold_wt" value="{{ $jewellery->gold_wt }}">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="dia_wt">Diamond Weight:</label>
+                                    <input type="text" class="form-control" name="dia_wt" id="dia_wt" value="{{ $jewellery->dia_wt }}">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="shape_cut">Shape Cut:</label>
+                                    <input type="text" class="form-control" name="shape_cut" id="shape_cut" value="{{ $jewellery->shape_cut }}">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="clarity">Clarity:</label>
+                                    <input type="text" class="form-control" name="clarity" id="clarity" value="{{ $jewellery->clarity }}">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="color">Color:</label>
+                                    <input type="text" class="form-control" name="color" id="color" value="{{ $jewellery->color }}">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="finish">Finish:</label>
+                                    <input type="text" class="form-control" name="finish" id="finish" value="{{ $jewellery->finish }}">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="description">Description:</label>
+                                    <textarea class="form-control" name="description" id="description">{{ $jewellery->description }}</textarea>
+                                </div>
                             </div>
 
                         <div class="col-md-4">
@@ -96,7 +101,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <img src="{{asset('images/gems/'.$diamond->image)}}" alt="">
+                                <img src="{{asset('images/gems/'.$jewellery->image)}}" alt="">
                             </div>
                         </div>
                     </div>
@@ -106,7 +111,7 @@
                             <span id="payment-button-amount">Submit</span>
                             <span id="payment-button-sending" style="display:none;">Sending…</span>
                         </button>
-                        <a class="btn btn-lg btn-danger text-light" href="{{url('admin/diamonds')}}">
+                        <a class="btn btn-lg btn-danger text-light" href="{{url('admin/jewellery')}}">
                             <span>Back</span>
                         </a>
                     </div>

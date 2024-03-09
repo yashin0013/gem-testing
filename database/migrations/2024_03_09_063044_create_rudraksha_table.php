@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('rudraksha', function (Blueprint $table) {
             $table->id();
             $table->string('report_number')->unique();
-            $table->smallInteger('type');
+            $table->smallInteger('type')->default(4);
             $table->string('weight');
             $table->string('dimension');
             $table->string('color');

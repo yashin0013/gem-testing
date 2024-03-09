@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('diamonds', function (Blueprint $table) {
             $table->id();
             $table->string('report_number')->unique();
-            $table->smallInteger('type');
+            $table->smallInteger('type')->default(2);
             $table->string('description');
             $table->string('shape_cut');
             $table->string('dimension');

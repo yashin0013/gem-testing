@@ -14,7 +14,7 @@
 
 <div class="d-flex align-items-center justify-content-between mb-3">
     <h1>Jewellery List</h1>
-    <a href="{{ url('admin/diamonds/create') }}" class="btn btn-primary">Add New <i class="fas fa-plus"></i></a>
+    <a href="{{ url('admin/jewellery/create') }}" class="btn btn-primary">Add New <i class="fas fa-plus"></i></a>
 </div>
 
 <div class="table-responsive mt-3 m-b-40">

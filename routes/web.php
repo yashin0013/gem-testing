@@ -52,6 +52,7 @@ Route::get('/diamonds/{diamond}/delete',[DiamondController::class,'delete']);
 
 // Jewellery Routes 
 Route::resource('jewellery', JewelleryController::class);
+Route::get('/jewellery/{jewellery}/delete',[JewelleryController::class,'delete']);
 
 // Route::get('/image',[GemController::class,'image_edit']);
 
