@@ -79,10 +79,10 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <!-- <li class="@yield('dashboard_selected')" >
+                        <li class="@yield('dashboard_selected')" >
                             <a href="{{url('admin/dashboard')}}">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                        </li> -->
+                                <i class="fa-solid fa-gauge-simple-high"></i>Dashboard</a>
+                        </li>
                         <li class="@yield('contact_msg')">
                             <a href="{{url('admin/contact_msg')}}">
                                 <i class="fas fa-list"></i>Contact Masseges</a>
@@ -160,7 +160,7 @@
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
-                <div class="section__content section__content--p30">
+                <div class="section__content ">
                     <div class="container-fluid">
                         @section('container')
                         @show
