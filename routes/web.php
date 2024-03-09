@@ -6,6 +6,7 @@ use App\Http\Controllers\DiamondController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JewelleryController;
 use App\Http\Controllers\RudrakshaController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/run', function () {
-//     Artisan::call("db:seed");
-// });
+Route::get('/run', function () {
+    Artisan::call("migrate");
+    Artisan::call("db:seed");
+});
 
 Route::get('/', [HomeController::class,'index']);
 
