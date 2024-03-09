@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Diamond;
 use Illuminate\Http\Request;
-use DataTables;
+use Yajra\DataTables\DataTables;
 use Illuminate\Validation\Rule;
 
 class DiamondController extends Controller
@@ -93,8 +93,8 @@ class DiamondController extends Controller
             $diamond->image = $gemImage;
         }
         $diamond->save();
-        $request->session()->flash('success', 'New Gem has been added successfully');
-        return redirect('admin/diamonds');
+        return redirect()->route('diamonds.index')->with('success', 'Diamond record created successfully!');
+       
     }
 
     public function show(Diamond $diamond)
@@ -147,14 +147,12 @@ class DiamondController extends Controller
             $diamond->image = $gemImage;
         }
         $diamond->save();
-        $request->session()->flash('success', 'Diamond has been updated successfully');
-        return redirect('admin/diamonds');
+        return redirect()->route('diamonds.index')->with('success', 'Diamond record updated successfully!');
     }
 
     public function delete(Request $request,Diamond $diamond)
     {
         $diamond->delete();
-        $request->session()->flash('success', 'Diamond has been deleted successfully');
-        return redirect('admin/diamonds');
+        return redirect()->route('diamonds.index')->with('success', 'Diamond deleted successfully!');
     }
 }

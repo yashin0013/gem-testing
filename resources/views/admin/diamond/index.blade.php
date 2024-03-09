@@ -21,7 +21,7 @@
     <table class="table table-bordered data-table">
         <thead class="thead-dark">
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <th>Report Number</th>
                 <th>Description</th>
                 <th>Shape Cut</th>
@@ -52,8 +52,10 @@
             serverSide: true,
             ajax: "{{ url('admin/diamonds') }}",
             columns: [{
-                    data: 'id',
-                    name: 'id'
+                    data: 'DT_RowIndex',
+                    name: 'id',
+                    orderable: false,
+                    searchable: false
                 },
                 {
                     data: 'report_number',

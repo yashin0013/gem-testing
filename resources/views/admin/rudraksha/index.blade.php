@@ -1,5 +1,5 @@
 @extends('admin/layout')
-@section('page_title','Jewellery List')
+@section('page_title','Rudraksha List')
 @section('jewellery','active')
 @section('container')
 
@@ -13,8 +13,8 @@
 @endif
 
 <div class="d-flex align-items-center justify-content-between mb-3">
-    <h1>Jewellery List</h1>
-    <a href="{{ url('admin/jewellery/create') }}" class="btn btn-primary">Add New <i class="fas fa-plus"></i></a>
+    <h1>Rudraksha's List</h1>
+    <a href="{{ url('admin/rudraksha/create') }}" class="btn btn-primary">Add New <i class="fas fa-plus"></i></a>
 </div>
 
 <div class="table-responsive mt-3 m-b-40">
@@ -23,14 +23,15 @@
             <tr>
                 <th>#</th>
                 <th>Report Number</th>
-                <th>Gross Weight</th>
-                <th>Gold Weight</th>
-                <th>Diamond Weight</th>
-                <th>Shape Cut</th>
-                <th>Clarity</th>
+                <th>Weight</th>
+                <th>Dimension</th>
                 <th>Color</th>
-                <th>Finish</th>
-                <th>Description</th>
+                <th>Shape</th>
+                <th>Natural Face</th>
+                <th>Artificial Face</th>
+                <th>Test</th>
+                <th>Origin</th>
+                <th>Comments</th>
                 <th>Image</th>
                 <th>Action</th>
             </tr>
@@ -48,7 +49,7 @@
         var table = $('.data-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ url('admin/jewellery') }}",
+            ajax: "{{ url('admin/rudraksha') }}",
             columns: [{
                     data: 'DT_RowIndex',
                     name: 'id',
@@ -56,40 +57,45 @@
                     searchable: false
                 },
                 {
-                    data: 'report_number',
-                    name: 'report_number'
+                    "data": "report_number",
+                    "name": "report_number"
                 },
                 {
-                    data: 'gross_wt',
-                    name: 'gross_wt'
+                    "data": "weight",
+                    "name": "weight"
                 },
                 {
-                    data: 'gold_wt',
-                    name: 'gold_wt'
+                    "data": "dimension",
+                    "name": "dimension"
                 },
                 {
-                    data: 'dia_wt',
-                    name: 'dia_wt'
+                    "data": "color",
+                    "name": "color"
                 },
                 {
-                    data: 'shape_cut',
-                    name: 'shape_cut'
+                    "data": "shape",
+                    "name": "shape"
                 },
                 {
-                    data: 'clarity',
-                    name: 'clarity'
+                    "data": "natural_face",
+                    "name": "natural_face"
                 },
                 {
-                    data: 'color',
-                    name: 'color'
+                    "data": "artificial_face",
+                    "name": "artificial_face"
                 },
                 {
-                    data: 'finish',
-                    name: 'finish'
+                    "data": "test",
+                    "name": "test"
                 },
                 {
-                    data: 'description',
-                    name: 'Description'
+                    "data": "origin",
+                    "name": "origin"
+                },
+                {
+                    "data": "comments",
+                    "name": "comments",
+                    orderable: false,
                 },
 
                 {

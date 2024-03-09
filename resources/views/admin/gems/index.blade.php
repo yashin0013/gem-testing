@@ -1,6 +1,6 @@
 @extends('admin/layout')
-@section('page_title','Jewellery List')
-@section('jewellery','active')
+@section('page_title','Gems List')
+@section('gems','active')
 @section('container')
 
 @if(session()->has('message'))
@@ -13,8 +13,8 @@
 @endif
 
 <div class="d-flex align-items-center justify-content-between mb-3">
-    <h1>Jewellery List</h1>
-    <a href="{{ url('admin/jewellery/create') }}" class="btn btn-primary">Add New <i class="fas fa-plus"></i></a>
+    <h1>Gems List</h1>
+    <a href="{{ url('admin/gems/create') }}" class="btn btn-primary">Add New Gem</a>
 </div>
 
 <div class="table-responsive mt-3 m-b-40">
@@ -23,14 +23,16 @@
             <tr>
                 <th>#</th>
                 <th>Report Number</th>
-                <th>Gross Weight</th>
-                <th>Gold Weight</th>
-                <th>Diamond Weight</th>
-                <th>Shape Cut</th>
-                <th>Clarity</th>
-                <th>Color</th>
-                <th>Finish</th>
-                <th>Description</th>
+                <th>Weight</th>
+                <th>dimension</th>
+                <th>color</th>
+                <th>shape cut</th>
+                <th>optic char</th>
+                <th>refractive index</th>
+                <th>specific gravity</th>
+                <th>microscope view</th>
+                <th>species</th>
+                <th>comments</th>
                 <th>Image</th>
                 <th>Action</th>
             </tr>
@@ -48,7 +50,7 @@
         var table = $('.data-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ url('admin/jewellery') }}",
+            ajax: "{{ route('gems.index') }}",
             columns: [{
                     data: 'DT_RowIndex',
                     name: 'id',
@@ -60,38 +62,46 @@
                     name: 'report_number'
                 },
                 {
-                    data: 'gross_wt',
-                    name: 'gross_wt'
+                    data: 'weight',
+                    name: 'weight'
                 },
                 {
-                    data: 'gold_wt',
-                    name: 'gold_wt'
-                },
-                {
-                    data: 'dia_wt',
-                    name: 'dia_wt'
-                },
-                {
-                    data: 'shape_cut',
-                    name: 'shape_cut'
-                },
-                {
-                    data: 'clarity',
-                    name: 'clarity'
+                    data: 'dimension',
+                    name: 'dimension'
                 },
                 {
                     data: 'color',
                     name: 'color'
                 },
                 {
-                    data: 'finish',
-                    name: 'finish'
+                    data: 'shape_cut',
+                    name: 'shape_cut'
                 },
                 {
-                    data: 'description',
-                    name: 'Description'
+                    data: 'optic_char',
+                    name: 'optic_char'
                 },
-
+                {
+                    data: 'refractive_index',
+                    name: 'refractive_index'
+                },
+                {
+                    data: 'specific_gravity',
+                    name: 'specific_gravity'
+                },
+                {
+                    data: 'microscope_view',
+                    name: 'microscope_view'
+                },
+                {
+                    data: 'species',
+                    name: 'species'
+                },
+                {
+                    data: 'comments',
+                    name: 'comments',
+                    orderable: false,
+                },
                 {
                     data: 'image',
                     name: 'image',
@@ -109,5 +119,7 @@
 
     });
 </script>
+
+
 
 @endsection

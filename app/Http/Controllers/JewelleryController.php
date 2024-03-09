@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Jewellery;
 use Illuminate\Http\Request;
-use DataTables;
+use Yajra\DataTables\DataTables;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
@@ -64,8 +64,8 @@ class JewelleryController extends Controller
      */
     public function store(Request $request)
     {
-         // Validate the incoming request data
-         $validatedData = $request->validate([
+        // Validate the incoming request data
+        $validatedData = $request->validate([
             'report_number' => 'required|unique:jewellery',
             'gross_wt' => 'required',
             'gold_wt' => 'required',
@@ -76,7 +76,7 @@ class JewelleryController extends Controller
             'finish' => 'required',
             'image' => 'required',
             'description' => 'required',
-        ],[
+        ], [
             'report_number.required' => 'Report number is required.',
             'report_number.unique' => 'Report number must be unique.',
             'gross_wt.required' => 'Gross weight is required.',
@@ -90,32 +90,31 @@ class JewelleryController extends Controller
         ]);
 
         // Handle file upload
-    if ($request->hasFile('image')) {
-        $image = $request->file('image');
-        $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
-        $destinationPath = 'images/gems';
-        $image->move($destinationPath, $imageName);
-    } else {
-        $imageName = null; // If no image uploaded, set imageName to null or handle it as per your application logic
-    }
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+            $destinationPath = 'images/gems';
+            $image->move($destinationPath, $imageName);
+        } else {
+            $imageName = null; // If no image uploaded, set imageName to null or handle it as per your application logic
+        }
 
-    // Create a new record in the database
-    Jewellery::create([
-        'report_number' => $request->report_number,
-        'type' => 3,
-        'gross_wt' => $request->gross_wt,
-        'gold_wt' => $request->gold_wt,
-        'dia_wt' => $request->dia_wt,
-        'shape_cut' => $request->shape_cut,
-        'clarity' => $request->clarity,
-        'color' => $request->color,
-        'finish' => $request->finish,
-        'fluoresc' => $request->fluoresc,
-        'image' => $imageName,
-        'description' => $request->description,
-    ]);
+        // Create a new record in the database
+        Jewellery::create([
+            'report_number' => $request->report_number,
+            'type' => 3,
+            'gross_wt' => $request->gross_wt,
+            'gold_wt' => $request->gold_wt,
+            'dia_wt' => $request->dia_wt,
+            'shape_cut' => $request->shape_cut,
+            'clarity' => $request->clarity,
+            'color' => $request->color,
+            'finish' => $request->finish,
+            'fluoresc' => $request->fluoresc,
+            'image' => $imageName,
+            'description' => $request->description,
+        ]);
 
-        // Redirect the user to a relevant page after successfully storing the data
         return redirect()->route('jewellery.index')->with('success', 'Jewellery record created successfully!');
     }
 
@@ -133,7 +132,6 @@ class JewelleryController extends Controller
     public function edit(Jewellery $jewellery)
     {
         return view('admin.jewellery.edit', compact('jewellery'));
-        
     }
 
     /**
@@ -154,7 +152,7 @@ class JewelleryController extends Controller
             'color' => 'required',
             'finish' => 'required',
             'description' => 'required',
-        ],[
+        ], [
             'report_number.required' => 'Report number is required.',
             'report_number.unique' => 'Report number must be unique.',
             'gross_wt.required' => 'Gross weight is required.',
@@ -171,7 +169,7 @@ class JewelleryController extends Controller
             $request->validate([
                 'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Assuming maximum file size is 2MB
             ]);
-    
+
             // Delete old image if exists
             // if ($jewellery->image) {
             //     Storage::delete('images/gems/' . $jewellery->image);
@@ -201,19 +199,15 @@ class JewelleryController extends Controller
         ]);
 
         return redirect()->route('jewellery.index')->with('success', 'Jewellery record updated successfully!');
-
-
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    
-        public function delete(Request $request,Jewellery $jewellery)
+
+    public function delete(Jewellery $jewellery)
     {
         $jewellery->delete();
-        return redirect()->route('jewellery.index')->with('success', 'Jewellery record deleted successfully!');
-
+        return redirect()->route('jewellery.index')->with('success', 'Jewellery deleted successfully!');
     }
-    
 }
