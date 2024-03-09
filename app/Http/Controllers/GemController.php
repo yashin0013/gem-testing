@@ -15,13 +15,47 @@ use Spipu\Html2Pdf\Html2Pdf;
 use App\Imports\GemsImport;
 use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Facades\Excel;
+use DataTables;
 
 class GemController extends Controller
 {
-    function index()
+    function index(Request $request)
     {
-        $data['gems'] = Gem::orderBy('id', 'desc')->paginate(5);
-        return view('admin/gems', $data);
+        // $data['gems'] = Gem::orderBy('id', 'desc')->paginate(5);
+
+        if ($request->ajax()) {
+            $data = Gem::select('*');
+            return Datatables::of($data)
+                    ->addIndexColumn()
+                    ->addColumn('comments', function ($row) {
+                        return '<p class="com-para">'.$row->comments.'</p>';
+                    })
+                    ->addColumn('image', function ($row) {
+                       return '<img
+                        src="/images/gems/'.$row->image.'"
+                        class="img-fluid"
+                        alt=""
+                    />';
+
+                    })
+                    ->addColumn('action', function($row){
+                        $btn=  '<div class="d-flex align-items-center justify-content-center" >
+                        <a href="/admin/gem/edit/'.$row->id.'" class="btn btn-sm btn-outline-primary mr-1">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="/admin/gem/delete/'.$row->id.'" class="btn btn-sm btn-outline-danger">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </div>';
+    
+                            return $btn;
+                    })
+
+                    ->rawColumns(['action','image','comments'])
+                    ->make(true);
+        }
+
+        return view('admin/gems');
     }
 
     public function show($id){

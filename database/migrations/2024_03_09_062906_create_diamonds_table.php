@@ -11,19 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('gems', function (Blueprint $table) {
+        Schema::create('diamonds', function (Blueprint $table) {
             $table->id();
             $table->string('report_number')->unique();
             $table->smallInteger('type');
-            $table->string('weight');
-            $table->string('dimension');
-            $table->string('color');
+            $table->string('description');
             $table->string('shape_cut');
-            $table->string('optic_char');
-            $table->string('refractive_index');
-            $table->string('specific_gravity');
-            $table->string('microscope_view');
-            $table->string('species');
+            $table->string('dimension');
+            $table->string('weight');
+            $table->string('clarity_grade');
+            $table->string('color_grade');
+            $table->string('cut_prop');
+            $table->string('finish');
+            $table->string('fluoresc');
             $table->string('image');
             $table->text('comments');
             $table->timestamps();
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('gems');
+        Schema::dropIfExists('diamonds');
     }
 };

@@ -123,7 +123,7 @@
                             @error('comments')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            </div>
+                        </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="image" class="control-label mb-1">Image</label>
@@ -133,11 +133,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                       
                     </div>
-                   
-                  
-                       
                     <div>
                         <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                             <span id="payment-button-amount">Submit</span>

@@ -20,8 +20,8 @@
 
 
 <div class="table-responsive mt-3 m-b-40">
-    <table class="table table-borderless table-data3">
-        <thead>
+    <table class="table table-bordered data-table">
+        <thead class="thead-dark">
             <tr>
                 <th>Id</th>
                 <th>Name</th>
@@ -33,21 +33,29 @@
             </tr>
         </thead>
         <tbody>
-             <?php $i=1 ?>
-            @foreach ($msgs as $msg)
-            <tr>
-                <td>{{$i++}}</td>
-                <td>{{$msg->name}}</td>
-                <td>{{$msg->email}}</td>
-                <td>{{$msg->phone}}</td>
-                <td>{{$msg->subject}}</td>
-                <td>{{$msg->message}}</td>
-                <td>
-                    <a href="{{url('admin/contact/delete/'.$msg->id)}}" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-            @endforeach
+            
         </tbody>
     </table>
 </div>
+
+<script type="text/javascript">
+  $(function () {
+    
+    var table = $('.data-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "{{ route('contact.index') }}",
+        columns: [
+            {data: 'id', name: 'id'},
+            {data: 'name', name: 'name'},
+            {data: 'email', name: 'email'},
+            {data: 'phone', name: 'phone'},
+            {data: 'subject', name: 'subject'},
+            {data: 'message', name: 'message',orderable: false,},
+            {data: 'action', name: 'action', orderable: false, searchable: false},
+        ]
+    });
+    
+  });
+</script>
 @endsection

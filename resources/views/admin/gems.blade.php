@@ -18,12 +18,10 @@
 </div>
 
 <div class="table-responsive mt-3 m-b-40">
-    <table class="table table-borderless table-data3">
-        <thead>
+    <table class="table table-bordered data-table">
+        <thead class="thead-dark">
             <tr>
                 <th>Id</th>
-                <th>Action</th>
-                <!-- <th>Download</th> -->
                 <th>Report Number</th>
                 <th>Weight</th>
                 <th>dimension</th>
@@ -36,50 +34,44 @@
                 <th>species</th>
                 <th>comments</th>
                 <th>Image</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($gems as $list)
-            <tr>
-                <td>{{$list->id}}</td>
-                <td>
-                    <div class="d-flex align-items-center justify-content-between" >
-                        <a href="{{url('admin/gem/edit/'.$list->id)}}" class="btn btn-sm btn-outline-primary mr-1">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                        <a href="{{url('admin/gem/delete/'.$list->id)}}" class="btn btn-sm btn-outline-danger">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
-                    </div>
-                </td>
-                <!-- <td>
-                    <a href="{{url('admin/gem/show/'.$list->id)}}" target="_blank" class="btn btn-sm btn-outline-primary mr-1">
-                        <i class="fa-solid fa-download"></i>
-                </a>
-            </td> -->
-                <td>{{$list->report_number}}</td>
-                <td>{{$list->weight}}</td>
-                <td>{{$list->dimension}}</td>
-                <td>{{$list->color}}</td>
-                <td>{{$list->shape_cut}}</td>
-                <td>{{$list->optic_char}}</td>
-                <td>{{$list->refractive_index}}</td>
-                <td>{{$list->specific_gravity}}</td>
-                <td>{{$list->microscope_view}}</td>
-                <td>{{$list->species}}</td>
-                <td>{{ (strlen($list->comments) > 20) ? substr($list->comments, 0 , 20).'...' : $list->comments }}</td>
-                <td>
-                    <img
-                        src="{{asset('images/gems/'.$list->image)}}"
-                        class="img-fluid"
-                        alt=""
-                    />
-                </td>
-               
-            </tr>
-            @endforeach
+          
         </tbody>
     </table>
-    {{ $gems->links() }}
+    
 </div>
+
+<script type="text/javascript">
+  $(function () {
+    
+    var table = $('.data-table').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "{{ route('gems.index') }}",
+        columns: [
+            {data: 'id', name: 'id'},
+            {data: 'report_number', name: 'report_number'},
+            {data: 'weight', name: 'weight'},
+            {data: 'dimension', name: 'dimension'},
+            {data: 'color', name: 'color'},
+            {data: 'shape_cut', name: 'shape_cut'},
+            {data: 'optic_char', name: 'optic_char'},
+            {data: 'refractive_index', name: 'refractive_index'},
+            {data: 'specific_gravity', name: 'specific_gravity'},
+            {data: 'microscope_view', name: 'microscope_view'},
+            {data: 'species', name: 'species'},
+            {data: 'comments', name: 'comments', orderable: false,},
+            {data: 'image', name: 'image', orderable: false, searchable: false},
+            {data: 'action', name: 'action', orderable: false, searchable: false},
+        ]
+    });
+    
+  });
+</script>
+
+
+
 @endsection

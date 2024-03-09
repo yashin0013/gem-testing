@@ -11,21 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('gems', function (Blueprint $table) {
+        Schema::create('jewellery', function (Blueprint $table) {
             $table->id();
             $table->string('report_number')->unique();
             $table->smallInteger('type');
-            $table->string('weight');
-            $table->string('dimension');
-            $table->string('color');
+            $table->smallInteger('gross_wt');
+            $table->smallInteger('gold_wt');
+            $table->smallInteger('dia_wt');
             $table->string('shape_cut');
-            $table->string('optic_char');
-            $table->string('refractive_index');
-            $table->string('specific_gravity');
-            $table->string('microscope_view');
-            $table->string('species');
+            $table->string('clarity');
+            $table->string('color');
+            $table->string('finish');
             $table->string('image');
-            $table->text('comments');
+            $table->text('description');
             $table->timestamps();
         });
     }
@@ -35,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('gems');
+        Schema::dropIfExists('jewellery');
     }
 };

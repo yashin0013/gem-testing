@@ -7,6 +7,7 @@ use App\Models\Admin;
 use App\Models\Contact;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use DataTables;
 
 class AdminController extends Controller
 {
@@ -43,10 +44,27 @@ class AdminController extends Controller
         }
     }
 
-    public function contact_msg()
+    public function contact_msg(Request $request)
     {
-        $data['msgs'] = Contact::orderBy('id', 'desc')->get();
-        return view('admin/contact_msg', $data);
+        // $data['msgs'] = Contact::orderBy('id', 'desc')->get();
+
+        if ($request->ajax()) {
+            $data = Contact::select('*');
+            return Datatables::of($data)
+                    ->addIndexColumn()
+                    ->addColumn('action', function($row){
+                        $btn=  '<a href="/admin/contact/delete/'.$row->id.'" class="btn btn-sm btn-outline-danger">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>';
+    
+                            return $btn;
+                    })
+
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+
+        return view('admin/contact_msg');
     }
 
     public function delete(Request $request,$id)

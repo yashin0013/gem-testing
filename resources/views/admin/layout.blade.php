@@ -5,6 +5,7 @@
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('page_title')</title>
     <link href="{{asset('assets/img/icon.jpeg')}}" rel="icon">
@@ -14,15 +15,20 @@
         media="all">
     <link href="{{ asset('admin_asset/vendor/perfect-scrollbar/perfect-scrollbar.css')}}" rel="stylesheet" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
     <!-- Bootstrap CSS-->
     <link href="{{ asset('admin_asset/vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
     <link href="{{ asset('admin_asset/css/theme.css')}}" rel="stylesheet" media="all">
     <link href="{{ asset('admin_asset/css/style.css')}}" rel="stylesheet" media="all">
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-    <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
 </head>
 
@@ -83,7 +89,19 @@
                         </li>
                         <li class="@yield('gems')">
                             <a href="{{url('admin/gems')}}">
-                            <i class="fab fa-usps"></i>Gems</a>
+                            <i class="fab fa-usps"></i>Gem Stones</a>
+                        </li>
+                        <li class="@yield('diamonds')">
+                            <a href="{{url('admin/diamonds')}}">
+                            <i class="fab fa-usps"></i>Diamonds</a>
+                        </li>
+                        <li class="@yield('jewellery')">
+                            <a href="{{url('admin/jewellery')}}">
+                            <i class="fab fa-usps"></i>Jewellery</a>
+                        </li>
+                        <li class="@yield('rudraksha')">
+                            <a href="{{url('admin/rudraksha')}}">
+                            <i class="fab fa-usps"></i>Rudraksha</a>
                         </li>
                         <li class="@yield('import')">
                             <a href="{{url('admin/import_page')}}">

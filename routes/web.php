@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GemController;
+use App\Http\Controllers\DiamondController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JewelleryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,7 +35,7 @@ Route::group(['middleware'=>'admin_auth', 'prefix'=> 'admin'],function()
 {
 Route::view('/dashboard','admin/dashboard');
 
-Route::get('/gems',[GemController::class,'index']);
+Route::get('/gems',[GemController::class,'index'])->name('gems.index');
 Route::get('/gem/create',[GemController::class,'create']);
 Route::post('/gem/store',[GemController::class,'store'])->name('gem.store');
 Route::get('/gem/edit/{id}',[GemController::class,'edit']);
@@ -44,10 +46,18 @@ Route::get('/import_page',[GemController::class,'import_page']);
 Route::post('/gem/import',[GemController::class,'import'])->name('gem.import');
 Route::get('/sample-csv',[GemController::class,'download']);
 
+//  Diamond routes 
+Route::resource('/diamonds', DiamondController::class);
+Route::get('/diamonds/{diamond}/delete',[DiamondController::class,'delete']);
+
+// Jewellery Routes 
+Route::resource('jewellery', JewelleryController::class);
+
 // Route::get('/image',[GemController::class,'image_edit']);
 
 
-Route::get('/contact_msg',[AdminController::class,'contact_msg']);
+
+Route::get('/contact_msg',[AdminController::class,'contact_msg'])->name('contact.index');
 Route::get('/contact/delete/{id}',[AdminController::class,'delete']);
 
 Route::get('/logout', function () {

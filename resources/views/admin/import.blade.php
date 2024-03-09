@@ -34,7 +34,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="file" class="control-label mb-1">Choose file</label>
-                                <input id="file" name="file" type="file" class="form-control-file" required>
+                                <input id="file" name="file" type="file" accept=".csv, .xls, .xlsx" class="form-control-file" required>
                             </div>
                             @error('file')
                             <div class="alert alert-danger py-1 px-2 text-danger">{{ $message }}</div>

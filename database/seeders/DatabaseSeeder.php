@@ -14,6 +14,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             GemSeeder::class,
+            DiamondSeeder::class,
+            JewellerySeeder::class,
+            RudrakshaSeeder::class,
             AdminSeeder::class
         ]);
         // \App\Models\User::factory(10)->create();

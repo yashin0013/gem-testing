@@ -1,5 +1,18 @@
 /* Custom CSS */
 
+.thead-dark tr th{
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+.com-para{
+  overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
 /* Flash message css */
 .notify {
     position: fixed;

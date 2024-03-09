@@ -11,19 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('gems', function (Blueprint $table) {
+        Schema::create('rudraksha', function (Blueprint $table) {
             $table->id();
             $table->string('report_number')->unique();
             $table->smallInteger('type');
             $table->string('weight');
             $table->string('dimension');
             $table->string('color');
-            $table->string('shape_cut');
-            $table->string('optic_char');
-            $table->string('refractive_index');
-            $table->string('specific_gravity');
-            $table->string('microscope_view');
-            $table->string('species');
+            $table->string('shape');
+            $table->string('natural_face');
+            $table->string('artificial_face');
+            $table->string('test');
+            $table->string('origin');
             $table->string('image');
             $table->text('comments');
             $table->timestamps();
@@ -35,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('gems');
+        Schema::dropIfExists('rudraksha');
     }
 };

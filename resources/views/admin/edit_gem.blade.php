@@ -146,10 +146,13 @@
 
 
                     <div>
-                        <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                        <button id="payment-button" type="submit" class="btn btn-lg btn-info">
                             <span id="payment-button-amount">Submit</span>
                             <span id="payment-button-sending" style="display:none;">Sending…</span>
                         </button>
+                        <a class="btn btn-lg btn-danger text-light" href="{{url('admin/gems')}}">
+                            <span>Back</span>
+                        </a>
                     </div>
                     <!-- <input type="hidden" name="id" value=""> -->
 
