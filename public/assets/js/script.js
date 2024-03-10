@@ -30,9 +30,15 @@ function reportCall() {
             url: url,
             data: {rid:rId},
             success: (response) => {
+              console.log(response.error);
+              if (response.error) {
+                $('.form-error-msg').css('display','block');
+                $('.form-error-msg').html(response.message);
+              }else{
                 $(".modal-body").html(response);
                 $("#reportModal").modal("show");
                 $('.form-error-msg').css('display','none');
+              }
                
             },
             error: function(response){

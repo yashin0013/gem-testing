@@ -3,56 +3,24 @@
     <div class="col-md-8">
       <table class="table">
         <tbody>
-          <tr>
-            <th scope="row">Report Number</th>
-            <td>{{$gem->report_number}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Weight of stone</th>
-            <td>{{$gem->weight}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Dimension</th>
-            <td colspan="2">{{$gem->dimension}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Color</th>
-            <td colspan="2">{{$gem->color}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Shape & Cut</th>
-            <td colspan="2">{{$gem->shape_cut}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Optic Character</th>
-            <td colspan="2">{{$gem->optic_char}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Refractive Index</th>
-            <td colspan="2">{{$gem->refractive_index}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Specific Gravity</th>
-            <td colspan="2">{{$gem->specific_gravity}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Microscope View</th>
-            <td colspan="2">{{$gem->microscope_view}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Species</th>
-            <td colspan="2">{{$gem->species}}</td>
-          </tr>
-          <tr>
-            <th scope="row">Comments</th>
-            <td colspan="2">{{$gem->comments}}</td>
-          </tr>
+          
+        @foreach($data as $key => $value)
+        @if ($key=='image')
+        @continue
+    @endif
+        <tr>
+            <th scope="row">{{ ucfirst(str_replace('_', ' ', $key)) }}</th>
+            <td>{{$value}}</td>
+        </tr>
+        @endforeach
+
+        
         </tbody>
       </table>
     </div>
     <div class="col-md-4">
       <div class="gem-img-box">
-        <img src="{{asset('images/gems/'.$gem->image)}}" class="img-fluid" alt="" />
+        <img src="{{asset('images/gems/'.$data['image'])}}" class="img-fluid" alt="" />
       </div>
       <div class="img-box">
         <img src="{{asset('assets/img/img.png')}}" class="img-fluid" alt="" />
