@@ -7,46 +7,13 @@ use App\Models\Diamond;
 use App\Models\Gem;
 use App\Models\Jewellery;
 use App\Models\Rudraksha;
-use App\Rules\ExistsInAnyTable;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     public function index()
     {
         return view('index');
-    }
-
-    function test($id)
-    {
-
-        $results = getProductIdAndType($id);
-
-        if ($results) {
-            if ($results->type == 1) {
-                $data = Gem::find($results->id);
-            } elseif ($results->type == 2) {
-                $data = Diamond::find($results->id);
-            } elseif ($results->type == 3) {
-                $data = Jewellery::find($results->id);
-            } elseif ($results->type == 4) {
-                $data = Rudraksha::find($results->id);
-            } else {
-                $data = "No Data Found.";
-            }
-        } else {
-            $data = "No Data found.";
-        }
-
-        //    $data = $data->except('id');
-
-        $var = $data->getAttributes();
-        $var = $var->except('id');
-        dd($var);
-        foreach ($var as $key => $value) {
-            echo "Attribute Name: $key, Value: $value <br>";
-        }
     }
 
     public function getreport(Request $request)

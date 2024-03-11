@@ -10,7 +10,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="card-title">
-                    <h3 class="text-center title-2">Bulk Import</h3>
+                    <h3 class="text-center title-2">Bulk import {{$type}}</h3>
                 </div>
                 <hr>
                 <form action="{{route('gem.import')}}" method="post" enctype="multipart/form-data">
@@ -24,7 +24,7 @@
                           <h4><i class="icon fa fa-ban"></i> Error!</h4>
                           @foreach(session('validationErrors') as $error)
                           {{ $error }} <br>
-                          @endforeach      
+                          @endforeach
                       </div>
                     </div>
                 </div>
@@ -39,6 +39,8 @@
                             @error('file')
                             <div class="alert alert-danger py-1 px-2 text-danger">{{ $message }}</div>
                             @enderror
+                            <input name="type" type="hidden" value="{{ $type }}" required>
+
                         </div>
                     </div>
 
@@ -47,9 +49,8 @@
                             <span id="payment-button-amount">Upload</span>
                             <span id="payment-button-sending" style="display:none;">Sending…</span>
                         </button>
-                        <a href="{{url('admin/sample-csv')}}" class="btn btn-sm btn-success" download>Download Sample CSV File</a>
+                        <a href="{{url('admin/sample-excel/'.$type)}}" class="btn btn-sm btn-success" download>Download Sample CSV File</a>
                     </div>
-                    <!-- <input type="hidden" name="id" value=""> -->
                 </form>
             </div>
         </div>

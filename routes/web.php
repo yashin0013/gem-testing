@@ -26,7 +26,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [HomeController::class,'index']);
-Route::get('/test/{id}', [HomeController::class,'test']);
 
 Route::post('getreport',[HomeController::class,'getreport'])->name('getreport');
 Route::post('contact/store',[HomeController::class,'contact'])->name('contact.store');
@@ -38,7 +37,7 @@ Route::post('admin/auth',[AdminController::class,'auth'])->name('admin.auth');
 // Route::get('admin/updatepassword',[AdminController::class,'updatepassword']);
 Route::group(['middleware'=>'admin_auth', 'prefix'=> 'admin'],function()
 {
-Route::view('/dashboard','admin/dashboard');
+Route::view('/dashboard','admin/dashboard')->name('dashboard');
 
 Route::resources([
     'diamonds' => DiamondController::class,
@@ -49,14 +48,14 @@ Route::resources([
 
 Route::get('/gems/{gem}/delete',[GemController::class,'delete']);
 Route::get('/gem/show/{id}',[GemController::class,'show']);
-Route::get('/import_page',[GemController::class,'import_page']);
+Route::get('/import/{type}',[GemController::class,'import_page']);
 Route::post('/gem/import',[GemController::class,'import'])->name('gem.import');
-Route::get('/sample-csv',[GemController::class,'download']);
+Route::get('/sample-excel/{type}',[GemController::class,'download_excel']);
 
-//  Diamond routes 
+//  Diamond routes
 Route::get('/diamonds/{diamond}/delete',[DiamondController::class,'delete']);
 
-// Jewellery Routes 
+// Jewellery Routes
 Route::get('/jewellery/{jewellery}/delete',[JewelleryController::class,'delete']);
 
 // Rudraksha Routes

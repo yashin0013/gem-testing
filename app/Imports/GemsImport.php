@@ -3,13 +3,11 @@
 namespace App\Imports;
 
 use App\Models\Gem;
-use Maatwebsite\Excel\Concerns\ToModel;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Concerns\Importable;
-use Maatwebsite\Excel\Concerns\WithValidation;
 
 class GemsImport implements ToCollection, WithHeadingRow
 {

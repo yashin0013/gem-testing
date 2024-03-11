@@ -103,9 +103,27 @@
                             <a href="{{url('admin/rudraksha')}}">
                             <i class="fab fa-usps"></i>Rudraksha</a>
                         </li>
-                        <li class="@yield('import')">
+                        {{-- <li class="@yield('import')">
                             <a href="{{url('admin/import_page')}}">
                             <i class="fa-solid fa-file-import"></i>Bulk Import</a>
+                        </li> --}}
+                        <li class="has-sub @yield('import')">
+                            <a class="js-arrow" href="#">
+                                <i class="fa-solid fa-file-import"></i>Bulk Import <i class="fa-solid fa-chevron-right fa-xs"></i></a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="{{url('admin/import/gems')}}">Gem Stone</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('admin/import/diamonds')}}">Diamond</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('admin/import/jewellery')}}">Jewellery</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('admin/import/rudraksha')}}">Rudraksha</a>
+                                </li>
+                            </ul>
                         </li>
                         {{-- <li class="@yield('category')">
                             <a href="{{url('admin/category')}}">
@@ -188,6 +206,13 @@
         notify('{{session("success")}}', 'success');
     </script>
     @endif
+
+    @if(session()->has('error'))
+    <script>
+        notify('{{session("error")}}', 'error');
+    </script>
+    @endif
+
 </body>
 
 </html>

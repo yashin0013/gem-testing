@@ -12,7 +12,7 @@ function notify(quote, type) {
   );
 }
 
-// Report get krne ke liye 
+// Report get krne ke liye
 
 document.getElementById("ajax-form").onsubmit = function() {reportCall()};
 
@@ -30,7 +30,6 @@ function reportCall() {
             url: url,
             data: {rid:rId},
             success: (response) => {
-              console.log(response.error);
               if (response.error) {
                 $('.form-error-msg').css('display','block');
                 $('.form-error-msg').html(response.message);
@@ -39,7 +38,7 @@ function reportCall() {
                 $("#reportModal").modal("show");
                 $('.form-error-msg').css('display','none');
               }
-               
+
             },
             error: function(response){
                 $('.form-error-msg').css('display','block');
@@ -50,7 +49,7 @@ function reportCall() {
 };
 
 
-//  Have Question ko submit krne ke liye 
+//  Have Question ko submit krne ke liye
 
 //  $('#contact-form').submit(function(e) {
     function contactSubmit() {
@@ -59,7 +58,7 @@ function reportCall() {
         var url = $('#contact-form').attr("action");
         let form = document.getElementById("contact-form");
         let formData = new FormData(form);
-  
+
         $.ajax({
                 type:'POST',
                 url: url,
@@ -70,7 +69,7 @@ function reportCall() {
                   console.log(response);
                   notify('Form submitted successfully', 'success');
                     $('#contact-form').trigger("reset");
-                    
+
                     $('#contact-form').find(".print-error-msg").find("ul").html('');
                     $('#contact-form').find(".print-error-msg").css('display','none');
                 },
