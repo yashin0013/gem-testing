@@ -73,8 +73,8 @@
               A108 Adam Street <br>
               New York, NY 535022<br>
               United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              <strong>Phone:</strong><a href="tel:1 5589 55488 55"> +1 5589 55488 55</a><br>
+              <strong>Email:</strong><a href="mailto:info@example.com"> info@example.com</a><br>
             </p>
           </div>
 
