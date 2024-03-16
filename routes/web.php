@@ -37,7 +37,7 @@ Route::post('admin/auth',[AdminController::class,'auth'])->name('admin.auth');
 // Route::get('admin/updatepassword',[AdminController::class,'updatepassword']);
 Route::group(['middleware'=>'admin_auth', 'prefix'=> 'admin'],function()
 {
-Route::view('/dashboard','admin/dashboard')->name('dashboard');
+Route::get('/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
 
 Route::resources([
     'diamonds' => DiamondController::class,

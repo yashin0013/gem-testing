@@ -15,10 +15,10 @@
             <div class="overview__inner">
                 <div class="overview-box clearfix d-flex flex-column">
                     <div class="icon">
-                        <i class="zmdi zmdi-account-o"></i>
+                        <i class="fa-regular fa-square"></i>
                     </div>
                     <div class="text">
-                        <h2>10368</h2>
+                        <h2>{{ $gems }}</h2>
                         <span>Gemstone</span>
                     </div>
                 </div>
@@ -31,10 +31,10 @@
             <div class="overview__inner">
                 <div class="overview-box clearfix d-flex flex-column">
                     <div class="icon">
-                        <i class="zmdi zmdi-shopping-cart"></i>
+                        <i class="fa-regular fa-gem"></i>
                     </div>
                     <div class="text">
-                        <h2>388,688</h2>
+                        <h2>{{ $diamonds }}</h2>
                         <span>Diamonds</span>
                     </div>
                 </div>
@@ -47,10 +47,10 @@
             <div class="overview__inner">
                 <div class="overview-box clearfix d-flex flex-column">
                     <div class="icon">
-                        <i class="zmdi zmdi-calendar-note"></i>
+                        <i class="fa-solid fa-ring"></i>
                     </div>
                     <div class="text">
-                        <h2>1,086</h2>
+                        <h2>{{ $jewellery }}</h2>
                         <span>Jwellery</span>
                     </div>
                 </div>
@@ -63,10 +63,10 @@
             <div class="overview__inner">
                 <div class="overview-box clearfix d-flex flex-column">
                     <div class="icon">
-                        <i class="zmdi zmdi-money"></i>
+                        <i class="fa-solid fa-atom"></i>
                     </div>
                     <div class="text">
-                        <h2>$1,060,386</h2>
+                        <h2>{{ $rudraksha }}</h2>
                         <span>Rudraksha</span>
                     </div>
                 </div>

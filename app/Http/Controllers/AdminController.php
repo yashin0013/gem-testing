@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\Contact;
+use App\Models\Diamond;
+use App\Models\Gem;
+use App\Models\Jewellery;
+use App\Models\Rudraksha;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use DataTables;
@@ -44,6 +48,15 @@ class AdminController extends Controller
         }
     }
 
+    public function dashboard() {
+        $data['gems'] = Gem::count();
+        $data['diamonds'] = Diamond::count();
+        $data['jewellery'] = Jewellery::count();
+        $data['rudraksha'] = Rudraksha::count();
+        // dd($data);
+        return view('admin/dashboard',$data);
+    }
+
     public function contact_msg(Request $request)
     {
         // $data['msgs'] = Contact::orderBy('id', 'desc')->get();
@@ -56,7 +69,7 @@ class AdminController extends Controller
                         $btn=  '<a href="/admin/contact/delete/'.$row->id.'" class="btn btn-sm btn-outline-danger">
                             <i class="fas fa-trash-alt"></i>
                         </a>';
-    
+
                             return $btn;
                     })
 

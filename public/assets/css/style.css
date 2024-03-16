@@ -70,7 +70,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-    background: #fff;
+    background: #e5c366;
     transition: all 0.5s;
     z-index: 997;
     padding: 20px 0;
@@ -127,7 +127,7 @@ h6 {
     font-family: "Dosis", sans-serif;
     font-size: 15px;
     font-weight: 600;
-    color: #0f394c;
+    color: #163b31;
     white-space: nowrap;
     transition: 0.3s;
     text-transform: uppercase;
@@ -144,7 +144,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover > a {
-    color: #49b5e7;
+    color: #FE0467;
 }
 
 .navbar .dropdown ul {
@@ -1345,7 +1345,7 @@ section {
     padding: 0 0 30px 0;
     color: #444444;
     font-size: 14px;
-    background: #ebf7fc;
+    background: #e5c366;
 }
 
 .footer-newsletter {
@@ -1403,7 +1403,7 @@ section {
 
 #footer .footer-top {
     padding: 60px 0 30px 0;
-    background: #fff;
+    background: #e5c366;
 }
 
 #footer .footer-top .footer-contact {
