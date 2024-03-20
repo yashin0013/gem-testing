@@ -4,7 +4,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
     <div class="modal-content">
 
     </div>
@@ -44,7 +44,7 @@
   </div>
 </section><!-- End Hero -->
 
-<main id="main">
+{{-- <main id="main">
 
   <!-- ======= About Section ======= -->
   <section id="about" class="about pt-5">
@@ -67,7 +67,7 @@
             search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
 
         </div>
-      </div> --}}
+      </div> 
 
       <div class="row align-items-stretch">
 
@@ -241,6 +241,6 @@
     </div>
   </section><!-- End Contact Section -->
 
-</main><!-- End #main -->
+</main> --}}
 
 @endsection

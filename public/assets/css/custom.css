@@ -42,3 +42,34 @@
         background-size: 60% 100%;
     }
 }
+
+/* CSS for modal */
+
+.table tbody tr th{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table-box{
+    padding: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.gem-img-box{
+    width: 200px;
+}
+
+.gem-img-box img{
+    transition-property: transform;
+    transition-duration: 200ms;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.gem-img-box img:hover{
+    transform: scale(1.3);
+}

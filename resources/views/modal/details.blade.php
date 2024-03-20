@@ -5,34 +5,41 @@
 <div class="modal-body">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
-                <table class="table">
+            <div class="col-md-12 table-box">
+                <table class="table table-light table-striped table-hover table-bordered">
                     <tbody>
-
                         @foreach ($data as $key => $value)
                             @if ($key == 'image')
                                 @continue
                             @endif
                             <tr>
                                 <th scope="row">{{ ucfirst(str_replace('_', ' ', $key)) }}</th>
-                                <td>{{ $value }}</td>
+                                <td class="text-center">{{ $value }}</td>
+                                @if ($loop->first)
+                                <td rowspan="4">
+                                    <div class="gem-img-box">
+                                        <img src="{{ asset('images/gems/' . $data['image']) }}" class="img-fluid" alt="" />
+                                    </div>
+                                </td>
+                                @endif
+                                @if ($loop->iteration >4)
+                                    <td></td>
+                                @endif
                             </tr>
                         @endforeach
-
-
                     </tbody>
                 </table>
             </div>
-            <div class="col-md-4">
+            {{-- <div class="col-md-4 d-none">
                 <div class="gem-img-box">
                     <img src="{{ asset('images/gems/' . $data['image']) }}" class="img-fluid" alt="" />
                 </div>
-                <div class="img-box">
+                 <div class="img-box">
                     <img src="{{ asset('assets/img/img.png') }}" class="img-fluid" alt="" />
                 </div>
-            </div>
+            </div> --}}
         </div>
-        <div class="row justify-content-center mt-3">
+        {{-- <div class="row justify-content-center mt-3">
             <div class="col-md-9">
                 <h3 class="text-center">Have Question? Send Us</h3>
                 <form id="contact-form" onsubmit="event.preventDefault(); contactSubmit()"
@@ -65,7 +72,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 {{-- <div class="modal-footer">
