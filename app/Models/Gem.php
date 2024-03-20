@@ -11,6 +11,7 @@ class Gem extends Model
 
     protected $fillable = [
     'report_number',
+    'name',
     'weight',
     'dimension',
     'color',

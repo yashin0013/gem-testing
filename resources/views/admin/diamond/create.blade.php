@@ -24,6 +24,12 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label for="description">Description:</label>
                                 <input type="text" class="form-control" name="description" id="description" value="{{ old('description') }}">
                             </div>
@@ -76,16 +82,17 @@
                                 <input type="text" class="form-control" name="fluoresc" id="fluoresc" value="{{ old('fluoresc') }}">
                             </div>
                         </div>
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="comments" class="control-label mb-1">Comments</label>
-                                <textarea name="comments" class="form-control">{{ old('comments') }}</textarea>
-                            </div>
-                        </div>
+
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="image">Image:</label>
                                 <input type="file" class="form-control-file" name="image" id="image" >
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="comments" class="control-label mb-1">Comments</label>
+                                <textarea name="comments" class="form-control">{{ old('comments') }}</textarea>
                             </div>
                         </div>
                     </div>

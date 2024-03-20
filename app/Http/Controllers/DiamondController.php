@@ -33,7 +33,7 @@ class DiamondController extends Controller
                         <a href="/admin/diamonds/' . $row->id . '/delete" class="btn btn-sm btn-outline-danger">
                             <i class="fas fa-trash-alt"></i>
                         </a>
-                        
+
                     </div>';
 
                     return $btn;
@@ -55,6 +55,7 @@ class DiamondController extends Controller
     {
         $request->validate([
             'report_number' => 'required|unique:gems,report_number',
+            'name' => 'required',
             'description' => 'required',
             'shape_cut' => 'required',
             'dimension' => 'required',
@@ -71,6 +72,7 @@ class DiamondController extends Controller
 
         $diamond = new Diamond();
         $diamond->report_number = $request->report_number;
+        $diamond->name = $request->name;
         $diamond->type = 2;
         $diamond->description = $request->description;
         $diamond->shape_cut = $request->shape_cut;
@@ -94,7 +96,7 @@ class DiamondController extends Controller
         }
         $diamond->save();
         return redirect()->route('diamonds.index')->with('success', 'Diamond record created successfully!');
-       
+
     }
 
     public function show(Diamond $diamond)
@@ -114,6 +116,7 @@ class DiamondController extends Controller
                 Rule::unique('diamonds')->ignore($diamond->id),
             ],
             'description' => 'required',
+            'name' => 'required',
             'shape_cut' => 'required',
             'dimension' => 'required',
             'weight' => 'required',
@@ -126,6 +129,7 @@ class DiamondController extends Controller
         ]);
 
         $diamond->report_number = $request->report_number;
+        $diamond->name = $request->name;
         $diamond->description = $request->description;
         $diamond->shape_cut = $request->shape_cut;
         $diamond->dimension = $request->dimension;

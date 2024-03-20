@@ -15,6 +15,7 @@ class JewelleryExport implements FromCollection, WithHeadings
     {
         return Jewellery::select(
             'report_number',
+            'name',
             'gross_wt',
             'gold_wt',
             'dia_wt',
@@ -30,6 +31,7 @@ class JewelleryExport implements FromCollection, WithHeadings
     {
         return [
             'Report Number',
+            'Name',
             'Gross Weight',
             'Gold Weight',
             'Diamond Weight',

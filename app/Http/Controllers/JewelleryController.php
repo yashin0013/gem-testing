@@ -38,7 +38,7 @@ class JewelleryController extends Controller
                         <a href="/admin/jewellery/' . $row->id . '/delete" class="btn btn-sm btn-outline-danger">
                             <i class="fas fa-trash-alt"></i>
                         </a>
-                        
+
                     </div>';
 
                     return $btn;
@@ -67,6 +67,7 @@ class JewelleryController extends Controller
         // Validate the incoming request data
         $validatedData = $request->validate([
             'report_number' => 'required|unique:jewellery',
+            'name' => 'required',
             'gross_wt' => 'required',
             'gold_wt' => 'required',
             'dia_wt' => 'required',
@@ -78,7 +79,8 @@ class JewelleryController extends Controller
             'description' => 'required',
         ], [
             'report_number.required' => 'Report number is required.',
-            'report_number.unique' => 'Report number must be unique.',
+            'report_number.unique' => 'Name is required.',
+            'name.required' => 'Report number is required.',
             'gross_wt.required' => 'Gross weight is required.',
             'gold_wt.required' => 'Gold weight is required.',
             'dia_wt.required' => 'Diamond weight is required.',
@@ -102,6 +104,7 @@ class JewelleryController extends Controller
         // Create a new record in the database
         Jewellery::create([
             'report_number' => $request->report_number,
+            'name' => $request->name,
             'type' => 3,
             'gross_wt' => $request->gross_wt,
             'gold_wt' => $request->gold_wt,
@@ -144,6 +147,7 @@ class JewelleryController extends Controller
                 'required',
                 Rule::unique('jewellery')->ignore($jewellery->id),
             ],
+            'name' => 'required',
             'gross_wt' => 'required',
             'gold_wt' => 'required',
             'dia_wt' => 'required',
@@ -155,6 +159,7 @@ class JewelleryController extends Controller
         ], [
             'report_number.required' => 'Report number is required.',
             'report_number.unique' => 'Report number must be unique.',
+            'name.required' => 'Name is required.',
             'gross_wt.required' => 'Gross weight is required.',
             'gold_wt.required' => 'Gold weight is required.',
             'dia_wt.required' => 'Diamond weight is required.',
@@ -185,6 +190,7 @@ class JewelleryController extends Controller
 
         $jewellery->update([
             'report_number' => $request->report_number,
+            'name' => $request->name,
             'type' => 3,
             'gross_wt' => $request->gross_wt,
             'gold_wt' => $request->gold_wt,

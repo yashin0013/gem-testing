@@ -15,6 +15,7 @@ class DiamondsExport implements FromCollection, WithHeadings
     {
         return Diamond::select(
             'report_number',
+            'name',
             'description',
             'shape_cut',
             'dimension',
@@ -32,6 +33,7 @@ class DiamondsExport implements FromCollection, WithHeadings
     {
         return [
             'Report Number',
+            'Name',
             'Description',
             'Shape Cut',
             'Dimension',

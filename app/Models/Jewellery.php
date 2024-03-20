@@ -12,6 +12,7 @@ class Jewellery extends Model
 
     protected $fillable = [
         'report_number',
+        'name',
         'type',
         'gross_wt',
         'gold_wt',

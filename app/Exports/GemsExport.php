@@ -15,6 +15,7 @@ class GemsExport implements FromCollection, WithHeadings
     {
         return Gem::select(
             'report_number',
+            'name',
             'weight',
             'dimension',
             'color',
@@ -32,6 +33,7 @@ class GemsExport implements FromCollection, WithHeadings
     {
         return [
             'Report Number',
+            'Name',
             'Weight',
             'Dimension',
             'Color',

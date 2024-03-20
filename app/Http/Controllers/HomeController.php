@@ -31,6 +31,7 @@ class HomeController extends Controller
             if ($results->type == 1) {
                 $data = Gem::select(
                     'report_number',
+                    'name',
                     'weight',
                     'dimension',
                     'color',
@@ -46,6 +47,7 @@ class HomeController extends Controller
             } elseif ($results->type == 2) {
                 $data = Diamond::select(
                     'report_number',
+                    'name',
                     'description',
                     'shape_cut',
                     'dimension',
@@ -61,6 +63,7 @@ class HomeController extends Controller
             } elseif ($results->type == 3) {
                 $data = Jewellery::select(
                     'report_number',
+                    'name',
                     'gross_wt',
                     'gold_wt',
                     'dia_wt',
@@ -75,6 +78,7 @@ class HomeController extends Controller
             } elseif ($results->type == 4) {
                 $data = Rudraksha::select(
                     'report_number',
+                    'name',
                     'weight',
                     'dimension',
                     'color',

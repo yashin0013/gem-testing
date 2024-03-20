@@ -34,13 +34,14 @@ function reportCall() {
                 $('.form-error-msg').css('display','block');
                 $('.form-error-msg').html(response.message);
               }else{
-                $(".modal-body").html(response);
+                $(".modal-content").html(response);
                 $("#reportModal").modal("show");
                 $('.form-error-msg').css('display','none');
               }
 
             },
             error: function(response){
+              console.log(response);
                 $('.form-error-msg').css('display','block');
                 $('.form-error-msg').html(response.responseJSON.errors.rid[0]);
             }

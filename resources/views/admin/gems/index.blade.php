@@ -23,6 +23,7 @@
             <tr>
                 <th>#</th>
                 <th>Report Number</th>
+                <th>Name</th>
                 <th>Weight</th>
                 <th>dimension</th>
                 <th>color</th>
@@ -60,6 +61,10 @@
                 {
                     data: 'report_number',
                     name: 'report_number'
+                },
+                {
+                    data: 'name',
+                    name: 'name'
                 },
                 {
                     data: 'weight',

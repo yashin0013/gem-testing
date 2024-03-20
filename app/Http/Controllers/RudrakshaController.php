@@ -36,7 +36,7 @@ class RudrakshaController extends Controller
                         <a href="/admin/rudraksha/' . $row->id . '/delete" class="btn btn-sm btn-outline-danger">
                             <i class="fas fa-trash-alt"></i>
                         </a>
-                        
+
                     </div>';
 
                     return $btn;
@@ -64,6 +64,7 @@ class RudrakshaController extends Controller
     {
         $request->validate([
             'report_number' => 'required|unique:rudraksha',
+            'name' => 'required',
             'weight' => 'required',
             'dimension' => 'required',
             'color' => 'required',
@@ -77,6 +78,7 @@ class RudrakshaController extends Controller
         ], [
             'report_number.required' => 'The report number field is required.',
             'report_number.unique' => 'The report number has already been taken.',
+            'name.required' => 'The Name field is required.',
             'weight.required' => 'The weight field is required.',
             'dimension.required' => 'The dimension field is required.',
             'color.required' => 'The color field is required.',
@@ -104,6 +106,7 @@ class RudrakshaController extends Controller
         // Create new Rudraksha instance and save data
         Rudraksha::create([
             'report_number' => $request->report_number,
+            'name' => $request->name,
             'type' => 4,
             'weight' => $request->weight,
             'dimension' => $request->dimension,
@@ -134,7 +137,7 @@ class RudrakshaController extends Controller
     public function edit(Rudraksha $rudraksha)
     {
         return view('admin.rudraksha.edit', compact('rudraksha'));
-        
+
     }
 
     /**
@@ -147,6 +150,7 @@ class RudrakshaController extends Controller
                 'required',
                 Rule::unique('rudraksha')->ignore($rudraksha->id),
             ],
+            'name' => 'required',
             'weight' => 'required',
             'dimension' => 'required',
             'color' => 'required',
@@ -159,6 +163,7 @@ class RudrakshaController extends Controller
         ], [
             'report_number.required' => 'The report number field is required.',
             'report_number.unique' => 'The report number has already been taken.',
+            'name.required' => 'The Name field is required.',
             'weight.required' => 'The weight field is required.',
             'dimension.required' => 'The dimension field is required.',
             'color.required' => 'The color field is required.',
@@ -195,6 +200,7 @@ class RudrakshaController extends Controller
          // Create new Rudraksha instance and save data
          $rudraksha->update([
             'report_number' => $request->report_number,
+            'name' => $request->name,
             'type' => 4,
             'weight' => $request->weight,
             'dimension' => $request->dimension,

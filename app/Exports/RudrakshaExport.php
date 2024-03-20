@@ -15,6 +15,7 @@ class RudrakshaExport implements FromCollection, WithHeadings
     {
         return Rudraksha::select(
             'report_number',
+            'name',
             'weight',
             'dimension',
             'color',
@@ -31,6 +32,7 @@ class RudrakshaExport implements FromCollection, WithHeadings
     {
         return [
             'Report Number',
+            'Name',
             'Weight',
             'Dimension',
             'Color',

@@ -40,6 +40,13 @@
                         </div>
 
                         <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" name="name" id="name" value="{{ $jewellery->name }}">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="gross_wt">Gross Weight:</label>
                                     <input type="text" class="form-control" name="gross_wt" id="gross_wt" value="{{ $jewellery->gross_wt }}">

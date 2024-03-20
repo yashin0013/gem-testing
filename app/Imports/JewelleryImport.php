@@ -38,6 +38,7 @@ class JewelleryImport implements ToCollection, WithHeadingRow
 
         $validator = Validator::make($rows->toArray(), [
             '*.report_number' => 'required|unique:jewellery,report_number',
+            '*.name'   => 'required',
             '*.gross_weight'   => 'required',
             '*.gold_weight'    => 'required',
             '*.diamond_weight'     => 'required',
@@ -50,6 +51,7 @@ class JewelleryImport implements ToCollection, WithHeadingRow
 
         $validator->setAttributeNames([
             '*.report_number' => 'Report Number',
+            '*.name'   => 'Name',
             '*.gross_weight'   => 'Gross Weight',
             '*.gold_weight'    => 'Gold Weight',
             '*.diamond_weight'     => 'Diamond Weight',
@@ -76,6 +78,7 @@ class JewelleryImport implements ToCollection, WithHeadingRow
             foreach ($rows as $row) {
                 Jewellery::create([
                     'report_number'   => $row['report_number'],
+                    'name'    => $row['name'],
                     'gross_wt'    => $row['gross_weight'],
                     'gold_wt'     => $row['gold_weight'],
                     'dia_wt'      => $row['diamond_weight'],

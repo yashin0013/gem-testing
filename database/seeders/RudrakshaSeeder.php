@@ -15,13 +15,14 @@ class RudrakshaSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
-        for ($i=0; $i < 10; $i++) { 
+        for ($i=0; $i < 10; $i++) {
             $rudra = new Rudraksha();
             $rudra->report_number = $faker->randomNumber(5, true);
             $rudra->type = 4;
             $rudra->weight = $faker->word();
             $rudra->dimension = $faker->randomNumber(2, true);
             $rudra->color = $faker->word();
+            $rudra->name = $faker->word();
             $rudra->shape = $faker->randomNumber(2, true);
             $rudra->natural_face = $faker->word();
             $rudra->artificial_face = $faker->colorName();

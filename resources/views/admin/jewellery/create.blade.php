@@ -37,6 +37,12 @@
                                     <input type="text" class="form-control" name="report_number" id="report_number" value="{{ old('report_number') }}">
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="name">Name:</label>
+                                    <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
+                                </div>
+                            </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -79,16 +85,11 @@
                                 </div>
                             </div>
 
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="finish">Finish:</label>
                                     <input type="text" class="form-control" name="finish" id="finish" value="{{ old('finish') }}">
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="form-group">
-                                    <label for="description">Description:</label>
-                                    <textarea class="form-control" name="description" id="description">{{ old('description') }}</textarea>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -97,8 +98,12 @@
                                     <input type="file" class="form-control-file" name="image" id="image" value="{{ old('image') }}">
                                 </div>
                             </div>
-
-
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="description">Description:</label>
+                                    <textarea class="form-control" name="description" id="description">{{ old('description') }}</textarea>
+                                </div>
+                            </div>
                         </div>
                         <!-- Add more rows with two input fields in each as needed -->
                 </div>

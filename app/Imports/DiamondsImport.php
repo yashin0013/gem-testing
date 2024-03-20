@@ -38,6 +38,7 @@ class DiamondsImport implements ToCollection, WithHeadingRow
 
         $validator = Validator::make($rows->toArray(), [
             '*.report_number' => 'required|unique:diamonds,report_number',
+            '*.name'     => 'required',
             '*.description'     => 'required',
             '*.shape_cut'       => 'required',
             '*.dimension'       => 'required',
@@ -52,6 +53,7 @@ class DiamondsImport implements ToCollection, WithHeadingRow
 
         $validator->setAttributeNames([
             '*.report_number' => 'Report Number',
+            '*.name'     => 'Name',
             '*.description'     => 'Description',
             '*.shape_cut'       => 'Shape Cut',
             '*.dimension'       => 'Dimension',
@@ -80,6 +82,7 @@ class DiamondsImport implements ToCollection, WithHeadingRow
             foreach ($rows as $row) {
                 Diamond::create([
                     'report_number'   => $row['report_number'],
+                    'name'   => $row['name'],
                     'description'     => $row['description'],
                     'shape_cut'       => $row['shape_cut'],
                     'dimension'       => $row['dimension'],

@@ -1,6 +1,6 @@
 @extends('admin/layout')
 @section('page_title','Rudraksha List')
-@section('jewellery','active')
+@section('rudraksha','active')
 @section('container')
 
 @if(session()->has('message'))
@@ -23,6 +23,7 @@
             <tr>
                 <th>#</th>
                 <th>Report Number</th>
+                <th>Name</th>
                 <th>Weight</th>
                 <th>Dimension</th>
                 <th>Color</th>
@@ -59,6 +60,10 @@
                 {
                     "data": "report_number",
                     "name": "report_number"
+                },
+                {
+                    "data": "name",
+                    "name": "name"
                 },
                 {
                     "data": "weight",

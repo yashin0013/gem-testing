@@ -16,9 +16,10 @@ class GemSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i=0; $i < 10; $i++) { 
+        for ($i=0; $i < 10; $i++) {
             $gem = new Gem();
             $gem->report_number = $faker->randomNumber(5, true);
+            $gem->name = $faker->word();
             $gem->type = 1;
             $gem->weight = $faker->randomNumber(2, true);
             $gem->dimension = $faker->randomNumber(2, true);

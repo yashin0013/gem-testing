@@ -38,6 +38,7 @@ class RudrakshaImport implements ToCollection, WithHeadingRow
 
         $validator = Validator::make($rows->toArray(), [
             '*.report_number' => 'required|unique:rudraksha,report_number',
+            '*.name'          => 'required',
             '*.weight'          => 'required',
             '*.dimension'       => 'required',
             '*.color'           => 'required',
@@ -51,6 +52,7 @@ class RudrakshaImport implements ToCollection, WithHeadingRow
 
         $validator->setAttributeNames([
             '*.report_number' => 'Report Number',
+            '*.name'          => 'Name',
             '*.weight'          => 'Weight',
             '*.dimension'       => 'Dimension',
             '*.color'           => 'Color',
@@ -78,6 +80,7 @@ class RudrakshaImport implements ToCollection, WithHeadingRow
             foreach ($rows as $row) {
                 Rudraksha::create([
                     'report_number'   => $row['report_number'],
+                    'name'          => $row['name'],
                     'weight'          => $row['weight'],
                     'dimension'       => $row['dimension'],
                     'color'           => $row['color'],

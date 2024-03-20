@@ -28,6 +28,16 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="name" class="control-label mb-1">Name</label>
+                                <input id="name" name="name" type="text" class="form-control" required>
+                            </div>
+                            @error('name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label for="weight" class="control-label mb-1">Weight</label>
                                 <input id="weight" name="weight" type="text" class="form-control" required>
                             </div>
@@ -115,21 +125,23 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label for="comments" class="control-label mb-1">Comments</label>
-                                <textarea name="comments" class="form-control"></textarea>
-                            </div>
-                            @error('comments')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
+
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="image" class="control-label mb-1">Image</label>
                                 <input id="image" name="image" type="file" class="form-control-file" required>
                             </div>
                             @error('image')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="comments" class="control-label mb-1">Comments</label>
+                                <textarea name="comments" class="form-control"></textarea>
+                            </div>
+                            @error('comments')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>

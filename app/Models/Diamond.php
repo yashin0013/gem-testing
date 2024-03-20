@@ -11,6 +11,7 @@ class Diamond extends Model
 
     protected $fillable = [
         'report_number',
+        'name',
         'type',
         'description',
         'shape_cut',
@@ -24,5 +25,5 @@ class Diamond extends Model
         'image',
         'comments',
     ];
-    
+
 }

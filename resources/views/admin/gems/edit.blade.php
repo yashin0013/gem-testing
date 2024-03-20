@@ -27,6 +27,15 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name" class="control-label mb-1">Name</label>
+                                <input id="name" name="name" type="text" value="{{ $gem->name }}" class="form-control" required>
+                            </div>
+                            @error('name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
                         <input id="id" name="id" type="hidden" value="{{ $gem->id }}" class="form-control">
 
                         <div class="col-md-6">

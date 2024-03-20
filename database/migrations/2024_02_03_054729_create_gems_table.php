@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('report_number')->unique();
             $table->smallInteger('type')->default(1);
+            $table->string('name');
             $table->string('weight');
             $table->string('dimension');
             $table->string('color');

@@ -118,6 +118,7 @@ class GemController extends Controller
 
         $request->validate([
             'report_number' => 'required|unique:gems,report_number',
+            'name' => 'required',
             'weight' => 'required',
             'dimension' => 'required',
             'color' => 'required',
@@ -131,6 +132,7 @@ class GemController extends Controller
 
         $gem = new Gem();
         $gem->report_number = $request->report_number;
+        $gem->name = $request->name;
         $gem->weight = $request->weight;
         $gem->dimension = $request->dimension;
         $gem->color = $request->color;
@@ -165,6 +167,7 @@ class GemController extends Controller
     {
         $request->validate([
             'report_number' => 'required',
+            'name' => 'required',
             'id' => 'required',
             'weight' => 'required',
             'dimension' => 'required',
@@ -179,6 +182,7 @@ class GemController extends Controller
 
         $gem = Gem::find($request->id);
         $gem->report_number = $request->report_number;
+        $gem->name = $request->name;
         $gem->weight = $request->weight;
         $gem->dimension = $request->dimension;
         $gem->color = $request->color;

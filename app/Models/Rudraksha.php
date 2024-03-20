@@ -13,6 +13,7 @@ class Rudraksha extends Model
 
     protected $fillable = [
         'report_number',
+        'name',
         'type',
         'weight',
         'dimension',
@@ -25,5 +26,5 @@ class Rudraksha extends Model
         'image',
         'comments',
     ];
-    
+
 }

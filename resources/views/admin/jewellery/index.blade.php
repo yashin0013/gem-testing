@@ -23,6 +23,7 @@
             <tr>
                 <th>#</th>
                 <th>Report Number</th>
+                <th>Name</th>
                 <th>Gross Weight</th>
                 <th>Gold Weight</th>
                 <th>Diamond Weight</th>
@@ -58,6 +59,10 @@
                 {
                     data: 'report_number',
                     name: 'report_number'
+                },
+                {
+                    data: 'name',
+                    name: 'name'
                 },
                 {
                     data: 'gross_wt',

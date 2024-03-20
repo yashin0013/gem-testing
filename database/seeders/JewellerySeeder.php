@@ -15,7 +15,7 @@ class JewellerySeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
-        for ($i=0; $i < 10; $i++) { 
+        for ($i=0; $i < 10; $i++) {
             $jewellery = new Jewellery();
             $jewellery->report_number = $faker->randomNumber(5, true);
             $jewellery->type = 3;
@@ -24,6 +24,7 @@ class JewellerySeeder extends Seeder
             $jewellery->dia_wt = $faker->randomNumber(2, true);
             $jewellery->shape_cut = $faker->randomNumber(2, true);
             $jewellery->clarity = $faker->word();
+            $jewellery->name = $faker->word();
             $jewellery->color = $faker->colorName();
             $jewellery->finish = $faker->word();
             $jewellery->image = "img";
