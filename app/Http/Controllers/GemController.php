@@ -63,12 +63,12 @@ class GemController extends Controller
         return view('admin.gems.index');
     }
 
-    public function show($id)
+    public function show(Gem $gem)
     {
-        $data['gem'] = Gem::find($id);
+        // $data['gem'] = Gem::find($id);
 
-        $pdf = Pdf::loadView('admin.card2', $data);
-        return $pdf->stream('invoice.pdf');
+        // $pdf = Pdf::loadView('admin.card2', $data);
+        // return $pdf->stream('invoice.pdf');
 
         // $pdf = PDF::loadView('admin.card2',$data);
         // return $pdf->stream('itsolutionstuff.pdf');
@@ -80,7 +80,7 @@ class GemController extends Controller
         // $html2pdf->output('sample.pdf');
 
         // $data['gem'] = Gem::find($id);
-        // return view('admin.card', $data);
+        return view('admin.card', compact('gem'));
     }
 
     // public function image_edit()

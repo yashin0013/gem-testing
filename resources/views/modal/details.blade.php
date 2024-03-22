@@ -1,11 +1,14 @@
 <div class="modal-header">
+    <div class="header_logo">
+        <img src="" alt="">
+    </div>
     <h1 class="modal-title fs-5" id="exampleModalLabel">{{ $data['name'] }}</h1>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 table-box">
+            <div class="col-md-8 table-box">
                 <table class="table table-light table-striped table-hover table-bordered">
                     <tbody>
                         @foreach ($data as $key => $value)
@@ -15,29 +18,21 @@
                             <tr>
                                 <th scope="row">{{ ucfirst(str_replace('_', ' ', $key)) }} :</th>
                                 <td class="text-center">{{ $value }}</td>
-                                @if ($loop->first)
-                                <td rowspan="4">
-                                    <div class="gem-img-box">
-                                        <img src="{{ asset('images/gems/' . $data['image']) }}" class="img-fluid" alt="" />
-                                    </div>
-                                </td>
-                                @endif
-                                @if ($loop->iteration >4)
-                                    <td></td>
-                                @endif
+
+
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
-            {{-- <div class="col-md-4 d-none">
+            <div class="col-md-4">
                 <div class="gem-img-box">
                     <img src="{{ asset('images/gems/' . $data['image']) }}" class="img-fluid" alt="" />
                 </div>
-                 <div class="img-box">
+                 {{-- <div class="img-box">
                     <img src="{{ asset('assets/img/img.png') }}" class="img-fluid" alt="" />
-                </div>
-            </div> --}}
+                </div> --}}
+            </div>
         </div>
         {{-- <div class="row justify-content-center mt-3">
             <div class="col-md-9">
