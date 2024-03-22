@@ -31,19 +31,22 @@ function reportCall() {
             data: {rid:rId},
             success: (response) => {
               if (response.error) {
+              notify(response.message, 'error');
+
                 $('.form-error-msg').css('display','block');
                 $('.form-error-msg').html(response.message);
               }else{
                 $(".modal-content").html(response);
                 $("#reportModal").modal("show");
-                $('.form-error-msg').css('display','none');
+                // $('.form-error-msg').css('display','none');
               }
 
             },
             error: function(response){
-              console.log(response);
-                $('.form-error-msg').css('display','block');
-                $('.form-error-msg').html(response.responseJSON.errors.rid[0]);
+              notify(response.responseJSON.errors.rid[0], 'error');
+              // console.log(response);
+              //   $('.form-error-msg').css('display','block');
+              //   $('.form-error-msg').html(response.responseJSON.errors.rid[0]);
             }
        });
 
@@ -86,3 +89,11 @@ function reportCall() {
            });
           }
     // });
+
+    function hideLabel (e){
+      if (e.value == "") {
+        e.classList.remove("valid");
+      }else{
+        e.classList.add("valid");
+      }
+    }

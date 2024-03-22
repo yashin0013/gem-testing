@@ -1528,20 +1528,11 @@ section {
   height: 6vh;
 }
 
-.form-error-msg {
-  color: red;
-  text-align: start;
-  margin-top: 7px;
-  width: 100%;
-  display: none;
-}
-
-
 /* Flash message css */
 .notify {
     position: fixed;
-    right: 5px;
-    top: 15px;
+    left: 5px;
+    bottom: 15px;
     z-index: 9999;
   }
   .notify > div {

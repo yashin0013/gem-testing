@@ -1,15 +1,15 @@
-<div class="modal-header">
+<div class="modal-header justify-content-between bg-light">
     <div class="header_logo">
-        <img src="" alt="">
+        <img src="{{asset('assets/img/logo2.png')}}" alt="gem_logo" width="80">
     </div>
-    <h1 class="modal-title fs-5" id="exampleModalLabel">{{ $data['name'] }}</h1>
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <h1 class="modal-title fs-2 fw-bolder text-warning text-uppercase" id="exampleModalLabel">GEM TESTING INDIA</h1>
+    <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body">
-    <div class="container">
-        <div class="row">
+    <div class="container px-0">
+        <div class="row gx-2">
             <div class="col-md-8 table-box">
-                <table class="table table-light table-striped table-hover table-bordered">
+                <table class="table table-bordered custom_table">
                     <tbody>
                         @foreach ($data as $key => $value)
                             @if ($key == 'image')
@@ -17,16 +17,20 @@
                             @endif
                             <tr>
                                 <th scope="row">{{ ucfirst(str_replace('_', ' ', $key)) }} :</th>
-                                <td class="text-center">{{ $value }}</td>
-
-
+                                <td>{{ $value }}</td>
                             </tr>
+                            @if ($loop->iteration == 2)
+                            <tr>
+                            <td class="bg-warning fw-bold" colspan="2"> The results obtained are as follows</td>
+                            </tr>
+                                
+                            @endif
                         @endforeach
                     </tbody>
                 </table>
             </div>
             <div class="col-md-4">
-                <div class="gem-img-box">
+                <div class="gem-img-box w-100 overflow-hidden rounded-3 shadow">
                     <img src="{{ asset('images/gems/' . $data['image']) }}" class="img-fluid" alt="" />
                 </div>
                  {{-- <div class="img-box">

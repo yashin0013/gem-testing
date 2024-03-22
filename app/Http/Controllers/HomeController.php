@@ -21,7 +21,7 @@ class HomeController extends Controller
        $test = $request->validate([
             'rid' => 'required'
         ],[
-            'rid.required' => "Please Enter Report Number"
+            'rid.required' => "Report number is a required field. Please enter the report number to proceed."
         ]);
 
         // $data['gem'] = Gem::where('report_number', $request->rid)->first();
@@ -92,10 +92,10 @@ class HomeController extends Controller
                 )
                     ->find($results->id)->getAttributes();
             } else {
-                return response()->json(['message' => 'No Data found.','error' => 1]);
+                return response()->json(['message' => 'Apologies, no matching report was found in our records.','error' => 1]);
             }
         } else {
-            return response()->json(['message' => 'No Data found.','error' => 1]);
+            return response()->json(['message' => 'Apologies, no matching report was found in our records.','error' => 1]);
         }
 
         return view('modal.details', compact('data'));
