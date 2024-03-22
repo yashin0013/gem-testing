@@ -37,7 +37,10 @@ Route::post('admin/auth',[AdminController::class,'auth'])->name('admin.auth');
 // Route::get('admin/updatepassword',[AdminController::class,'updatepassword']);
 Route::group(['middleware'=>'admin_auth', 'prefix'=> 'admin'],function()
 {
+    
 Route::get('/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
+Route::get('/images',[AdminController::class, 'images'])->name('images');
+Route::post('/images/upload',[AdminController::class, 'images_upload'])->name('images.upload');
 
 Route::resources([
     'diamonds' => DiamondController::class,

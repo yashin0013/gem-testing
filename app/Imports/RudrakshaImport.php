@@ -48,6 +48,7 @@ class RudrakshaImport implements ToCollection, WithHeadingRow
             '*.test'            => 'required',
             '*.origin'          => 'required',
             '*.comments'        => 'required',
+            '*.images'        => 'required',
         ]);
 
         $validator->setAttributeNames([
@@ -62,6 +63,7 @@ class RudrakshaImport implements ToCollection, WithHeadingRow
             '*.test'            => 'Test',
             '*.origin'          => 'Origin',
             '*.comments'        => 'Comments',
+            '*.images'        => 'Images',
         ]);
 
         if ($validator->fails() || !empty($errors)) {
@@ -90,7 +92,7 @@ class RudrakshaImport implements ToCollection, WithHeadingRow
                     'test'            => $row['test'],
                     'origin'          => $row['origin'],
                     'comments'        => $row['comments'],
-                    'image'     => "img"
+                    'image'        => $row['images']
                 ]);
             }
         }

@@ -103,10 +103,10 @@
                             <a href="{{url('admin/rudraksha')}}">
                             <i class="fab fa-usps"></i>Rudraksha</a>
                         </li>
-                        {{-- <li class="@yield('import')">
-                            <a href="{{url('admin/import_page')}}">
-                            <i class="fa-solid fa-file-import"></i>Bulk Import</a>
-                        </li> --}}
+                        <li class="@yield('images')">
+                            <a href="{{url('admin/images')}}">
+                                <i class="fa-solid fa-image"></i>Bulk Images</a>
+                        </li>
                         <li class="has-sub @yield('import')">
                             <a class="js-arrow" href="#">
                                 <i class="fa-solid fa-file-import"></i>Bulk Import <i class="fa-solid fa-chevron-right fa-xs"></i></a>

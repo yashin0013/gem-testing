@@ -47,6 +47,7 @@ class JewelleryImport implements ToCollection, WithHeadingRow
             '*.color'      => 'required',
             '*.finish'     => 'required',
             '*.description' => 'required',
+            '*.images' => 'required',
         ]);
 
         $validator->setAttributeNames([
@@ -60,6 +61,7 @@ class JewelleryImport implements ToCollection, WithHeadingRow
             '*.color'      => 'Color',
             '*.finish'     => 'Finish',
             '*.description' => 'Description',
+            '*.images' => 'Images',
         ]);
 
         if ($validator->fails() || !empty($errors)) {
@@ -87,7 +89,7 @@ class JewelleryImport implements ToCollection, WithHeadingRow
                     'color'       => $row['color'],
                     'finish'      => $row['finish'],
                     'description' => $row['description'],
-                    'image'     => "img"
+                    'image' => $row['images']
                 ]);
             }
         }

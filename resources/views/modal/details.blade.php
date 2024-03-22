@@ -13,7 +13,7 @@
                                 @continue
                             @endif
                             <tr>
-                                <th scope="row">{{ ucfirst(str_replace('_', ' ', $key)) }}</th>
+                                <th scope="row">{{ ucfirst(str_replace('_', ' ', $key)) }} :</th>
                                 <td class="text-center">{{ $value }}</td>
                                 @if ($loop->first)
                                 <td rowspan="4">

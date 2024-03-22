@@ -49,6 +49,7 @@ class DiamondsImport implements ToCollection, WithHeadingRow
             '*.finish'          => 'required',
             '*.fluoresc'        => 'required',
             '*.comments'        => 'required',
+            '*.images'        => 'required',
         ]);
 
         $validator->setAttributeNames([
@@ -64,6 +65,7 @@ class DiamondsImport implements ToCollection, WithHeadingRow
             '*.finish'          => 'Finish',
             '*.fluoresc'        => 'Fluoresc',
             '*.comments'        => 'Comments',
+            '*.images'        => 'Images',
         ]);
 
         if ($validator->fails() || !empty($errors)) {
@@ -93,7 +95,7 @@ class DiamondsImport implements ToCollection, WithHeadingRow
                     'finish'          => $row['finish'],
                     'fluoresc'        => $row['fluoresc'],
                     'comments'        => $row['comments'],
-                    'image'     => "img"
+                    'image'        => $row['images']
                 ]);
             }
         }

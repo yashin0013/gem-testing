@@ -25,6 +25,7 @@ class RudrakshaExport implements FromCollection, WithHeadings
             'test',
             'origin',
             'comments',
+            'image'
         )->where('id', 1)->get();
     }
 
@@ -41,7 +42,8 @@ class RudrakshaExport implements FromCollection, WithHeadings
             'Artificial Face',
             'Test',
             'Origin',
-            'Comments'
+            'Comments',
+            'Images',
         ];
     }
 }

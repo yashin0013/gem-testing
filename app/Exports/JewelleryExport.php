@@ -23,7 +23,8 @@ class JewelleryExport implements FromCollection, WithHeadings
             'clarity',
             'color',
             'finish',
-            'description'
+            'description',
+            'image'
         )->where('id', 1)->get();
     }
 
@@ -39,7 +40,8 @@ class JewelleryExport implements FromCollection, WithHeadings
             'Clarity',
             'Color',
             'Finish',
-            'Description'
+            'Description',
+            'Images'
         ];
     }
 }

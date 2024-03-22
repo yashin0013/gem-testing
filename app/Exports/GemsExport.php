@@ -25,7 +25,8 @@ class GemsExport implements FromCollection, WithHeadings
             'specific_gravity',
             'microscope_view',
             'species',
-            'comments'
+            'comments',
+            'image'
         )->where('id',1)->get();
     }
 
@@ -43,7 +44,8 @@ class GemsExport implements FromCollection, WithHeadings
             'Specific Gravity',
             'Microscope View',
             'Species',
-            'Comments'
+            'Comments',
+            'Images'
         ];
     }
 }

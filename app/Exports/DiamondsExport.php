@@ -25,7 +25,8 @@ class DiamondsExport implements FromCollection, WithHeadings
             'cut_prop',
             'finish',
             'fluoresc',
-            'comments'
+            'comments',
+            'image'
         )->where('id', 1)->get();
     }
 
@@ -43,7 +44,8 @@ class DiamondsExport implements FromCollection, WithHeadings
             'Cut Prop',
             'Finish',
             'Fluoresc',
-            'Comments'
+            'Comments',
+            'Images'
         ];
     }
 }

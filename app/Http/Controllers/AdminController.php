@@ -90,6 +90,31 @@ class AdminController extends Controller
 
     }
 
+    public function images() {
+        return view('admin.images');
+    }
+
+    public function images_upload(Request $request)
+    {
+        $request->validate([
+            'images' => 'required',
+            'images.*' => 'image|mimes:jpeg,png,jpg|max:2048' // Validate each image
+        ]);
+
+        if ($request->hasFile('images')) {
+            $images = [];
+            foreach ($request->file('images') as $image) {
+                $imageName = $image->getClientOriginalName();
+                $image->move(public_path('images/gems'), $imageName);
+                $images[] = $imageName;
+            }
+        return redirect()->route('images')->with('success', 'Images uploaded successfully');
+
+        }
+        return redirect()->route('images')->with('error', 'No images uploaded');
+
+    }
+
     // public function updatepassword()
     // {
     //    $r = Admin::find(1);

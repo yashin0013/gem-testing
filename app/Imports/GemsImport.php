@@ -52,6 +52,8 @@ class GemsImport implements ToCollection, WithHeadingRow
             '*.microscope_view' => 'required',
             '*.species' => 'required',
             '*.comments' => 'required',
+            '*.images' => 'required',
+
         ]);
 
         $validator->setAttributeNames([
@@ -67,6 +69,7 @@ class GemsImport implements ToCollection, WithHeadingRow
             '*.microscope_view' => 'Microscope View',
             '*.species' => 'Species',
             '*.comments' => 'Comments',
+            '*.images' => 'Images',
         ]);
 
         if ($validator->fails() || !empty($errors)) {
@@ -96,7 +99,7 @@ class GemsImport implements ToCollection, WithHeadingRow
                 'microscope_view'     => $row['microscope_view'],
                 'species'     => $row['species'],
                 'comments'     => $row['comments'],
-                'image'     => "img"
+                'image'     => $row['images']
             ]);
         }
     }
