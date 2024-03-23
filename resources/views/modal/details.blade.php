@@ -16,7 +16,14 @@
                                 @continue
                             @endif
                             <tr>
+                            @if ($key == 'name')
+                                <th scope="row">Item :</th>
+                                @elseif ($key == 'shape_cut')
+                                <th scope="row">Shape & Cut :</th>
+                                @else
                                 <th scope="row">{{ ucfirst(str_replace('_', ' ', $key)) }} :</th>
+                            @endif
+
                                 <td>{{ $value }}</td>
                             </tr>
                             @if ($loop->iteration == 2)
