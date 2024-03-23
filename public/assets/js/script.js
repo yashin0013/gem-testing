@@ -7,7 +7,7 @@ function notify(quote, type) {
     function (ele) {
       ele.remove();
     },
-    3000,
+    5000,
     notifyElement
   );
 }
@@ -33,8 +33,8 @@ function reportCall() {
               if (response.error) {
               notify(response.message, 'error');
 
-                $('.form-error-msg').css('display','block');
-                $('.form-error-msg').html(response.message);
+                // $('.form-error-msg').css('display','block');
+                // $('.form-error-msg').html(response.message);
               }else{
                 $(".modal-content").html(response);
                 $("#reportModal").modal("show");
@@ -78,7 +78,6 @@ function reportCall() {
                     $('#contact-form').find(".print-error-msg").css('display','none');
                 },
                 error: function(response){
-                    console.log(response.responseJSON.errors);
                     // $('#emp-form').find(".print-error-msg").find("ul").html('');
                     // $('#emp-form').find(".print-error-msg").css('display','block');
                     $.each( response.responseJSON.errors, function( key, value ) {

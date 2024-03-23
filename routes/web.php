@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GemController;
 use App\Http\Controllers\DiamondController;
+use App\Http\Controllers\FilesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JewelleryController;
 use App\Http\Controllers\RudrakshaController;
@@ -47,6 +48,7 @@ Route::resources([
     'jewellery' => JewelleryController::class,
     'rudraksha' => RudrakshaController::class,
     'gems' => GemController::class,
+    'files' => FilesController::class,
 ]);
 
 Route::get('/gems/{gem}/delete',[GemController::class,'delete']);
