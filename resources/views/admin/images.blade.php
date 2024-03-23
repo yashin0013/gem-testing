@@ -51,26 +51,25 @@
 </div>
 </div>
 
-<div class="d-flex align-items-center justify-content-between mb-3">
-    <h1>Images List</h1>
-</div>
-
-<div class="table-responsive mt-3 m-b-40">
-    <table class="table table-bordered data-table">
-        <thead class="thead-dark">
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Image</th>
-                <th>Copy Image</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table>
-
+<div class="container bg-light p-4 rounded">
+    <div class="mb-3">
+        <h1>Images List</h1>
+    </div>
+    <div class="table-responsive mt-3 m-b-40">
+        <table class="table table-bordered data-table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Copy Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <script type="text/javascript">

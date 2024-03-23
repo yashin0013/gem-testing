@@ -19,9 +19,6 @@ class FilesController extends Controller
             $data = Files::select('*');
             return Datatables::of($data)
                 ->addIndexColumn()
-                ->addColumn('image', function ($row) {
-                    return $row->image;
-                })
                 ->addColumn('images', function ($row) {
                     return '<img
                         src="/images/gems/' . $row->image . '"
