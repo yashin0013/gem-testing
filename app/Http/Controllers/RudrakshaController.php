@@ -33,7 +33,7 @@ class RudrakshaController extends Controller
                         <a href="/admin/rudraksha/' . $row->id . '/edit" class="btn btn-sm btn-outline-primary mr-1">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a href="/admin/rudraksha/' . $row->id . '/delete" class="btn btn-sm btn-outline-danger">
+                        <a href="/admin/rudraksha/' . $row->id . '/delete" onclick="return confirm(\'Are you sure you want to delete this item?\');" class="btn btn-sm btn-outline-danger">
                             <i class="fas fa-trash-alt"></i>
                         </a>
 
