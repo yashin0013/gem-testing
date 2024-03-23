@@ -51,6 +51,9 @@ Route::resources([
     'files' => FilesController::class,
 ]);
 
+Route::get('/files/{files}/delete',[FilesController::class,'delete']);
+
+
 Route::get('/gems/{gem}/delete',[GemController::class,'delete']);
 Route::get('/gem/show/{id}',[GemController::class,'show']);
 Route::get('/import/{type}',[GemController::class,'import_page']);

@@ -23,7 +23,7 @@ class FilesController extends Controller
                     return '<img
                         src="/images/gems/' . $row->image . '"
                         class="img-fluid"
-                        alt="'.$row->image.'"
+                        alt="' . $row->image . '"
                         width="100"
                     />';
                 })
@@ -34,11 +34,11 @@ class FilesController extends Controller
                     </button>
                 </div>';
 
-                return $btn;
+                    return $btn;
                 })
                 ->addColumn('action', function ($row) {
                     $btn =  '<div class="d-flex align-items-center justify-content-center" >
-                        <a href="/admin/diamonds/' . $row->id . '/delete" class="btn btn-sm btn-outline-danger">
+                        <a href="/admin/files/' . $row->id . '/delete" onclick="return confirm(\'Are you sure you want to delete this image?\');" class="btn btn-sm btn-outline-danger">
                             <i class="fas fa-trash-alt"></i>
                         </a>
                     </div>';
@@ -70,7 +70,7 @@ class FilesController extends Controller
             foreach ($request->file('images') as $image) {
                 $imageName = $image->getClientOriginalName();
                 $image->move(public_path('images/gems'), $imageName);
-                
+
                 $fileModal = new Files();
                 $fileModal->image = $imageName;
                 $fileModal->save();
@@ -107,8 +107,21 @@ class FilesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Files $files)
+    public function delete(Files $files)
     {
-        //
+
+        $file_path = public_path('images/gems/') . $files->image;
+        if (file_exists($file_path)) {
+            if (unlink($file_path)) {
+                $files->delete();
+                return redirect()->route('files.index')->with('success', 'Gem Stone deleted successfully!');
+            } else {
+                return redirect()->route('files.index')->with('error', 'Unable to delete the image.');
+            }
+        } else {
+            return redirect()->route('files.index')->with('error', 'Image does not exist.');
+        }
     }
+
+
 }
