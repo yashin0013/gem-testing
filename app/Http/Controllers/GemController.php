@@ -70,7 +70,9 @@ class GemController extends Controller
 
     public function show(Gem $gem)
     {
-        $pdf = PDF::loadView('admin.card',compact('gem'));
+        $customPaper = [0, 0, 400, 590];
+        $pdf = PDF::loadView('admin.card',compact('gem'))
+                    ->setPaper($customPaper, 'landscape');
         return $pdf->stream('gem-card.pdf');
         // return $pdf->stream('itsolutionstuff.pdf');
         return view('admin.card', compact('gem'));

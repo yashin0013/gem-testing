@@ -186,7 +186,8 @@ height: 90px;
 }
 
 .footer .title {
-   margin-top:20px    
+   margin-top:20px;
+   margin-left:50px;    
 }
 
 .footer .title p{
@@ -208,10 +209,10 @@ height: 90px;
     width:100%;
 }
 .stamp_image{
-    width: 10%;
+    width: 15%;
     position: absolute;
     right: 10px;
-    top: 250px;
+    top: 200px;
 }
 .stamp_image img {
     width: 100%;
@@ -225,7 +226,7 @@ height: 90px;
         <div class="main" id="main">
             <div class="header_wrap">
                 <div class="header">
-                    <img src="{{'data:image/png;base64,'.base64_encode(file_get_contents(public_path('assets/img/img-bg.png')))}}" alt="">
+                    <img src="{{'data:image/png;base64,'.base64_encode(file_get_contents(public_path('assets/img/card-logo.png')))}}" alt="">
                     <h2>Gem Testing India</h2>
                     <h4>Gmological <br> Leboratory</h4>
                 </div>
