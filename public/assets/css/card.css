@@ -4,7 +4,6 @@
 }
 
 .container{
-    /* width: 70%; */
     margin: 45px auto;
 }
 
@@ -16,6 +15,7 @@
    justify-content: space-between; */
 /* width: 100%; */
 position: relative;
+height: 90px;
 }
 
 .header img {
@@ -34,7 +34,7 @@ position: relative;
     text-transform: uppercase;
     padding-left: 20px;
     position: absolute;
-    left: 110px;
+    left: 272px;
     top: 15px;
 }
 
@@ -97,6 +97,7 @@ position: relative;
     background-size: 300px auto;
     position: relative;
     /* align-items: center; */
+    /* margin-top: 90px; */
 }
 
 .body .desc .table {

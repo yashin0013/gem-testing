@@ -27,6 +27,9 @@ Route::get('/run', function () {
 });
 
 Route::get('/', [HomeController::class,'index']);
+Route::get('/info', function () {
+    return phpinfo();
+});
 
 Route::post('getreport',[HomeController::class,'getreport'])->name('getreport');
 Route::post('contact/store',[HomeController::class,'contact'])->name('contact.store');
@@ -55,7 +58,6 @@ Route::get('/files/{files}/delete',[FilesController::class,'delete']);
 
 
 Route::get('/gems/{gem}/delete',[GemController::class,'delete']);
-Route::get('/gem/show/{id}',[GemController::class,'show']);
 Route::get('/import/{type}',[GemController::class,'import_page']);
 Route::post('/gem/import',[GemController::class,'import'])->name('gem.import');
 Route::get('/sample-excel/{type}',[GemController::class,'download_excel']);

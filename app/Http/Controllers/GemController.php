@@ -43,6 +43,12 @@ class GemController extends Controller
                         alt=""
                     />';
                 })
+                ->addColumn('view', function ($row) {
+                    $btn =  '<a href="/admin/gems/'.$row->id.'" class="btn btn-sm btn-warning mr-1" target="_blank">
+                            <i class="fas fa-eye"></i>
+                            </a>';
+                    return $btn;
+                })
                 ->addColumn('action', function ($row) {
                     $btn =  '<div class="d-flex align-items-center justify-content-center" >
                         <a href="/admin/gems/' . $row->id . '/edit" class="btn btn-sm btn-outline-primary mr-1">
@@ -55,8 +61,7 @@ class GemController extends Controller
 
                     return $btn;
                 })
-                ->rawColumns(['action', 'image', 'comments'])
-
+                ->rawColumns(['action', 'image', 'comments','view'])
                 ->make(true);
         }
 
@@ -65,21 +70,9 @@ class GemController extends Controller
 
     public function show(Gem $gem)
     {
-        // $data['gem'] = Gem::find($id);
-
-        // $pdf = Pdf::loadView('admin.card2', $data);
-        // return $pdf->stream('invoice.pdf');
-
-        // $pdf = PDF::loadView('admin.card2',$data);
+        $pdf = PDF::loadView('admin.card',compact('gem'));
+        return $pdf->stream('gem-card.pdf');
         // return $pdf->stream('itsolutionstuff.pdf');
-
-        // $html = View::make('admin.card2',$data)->render();
-
-        // $html2pdf = new Html2Pdf();
-        // $html2pdf->writeHTML($html);
-        // $html2pdf->output('sample.pdf');
-
-        // $data['gem'] = Gem::find($id);
         return view('admin.card', compact('gem'));
     }
 
@@ -158,10 +151,10 @@ class GemController extends Controller
         return redirect()->route('gems.index')->with('success', 'Gem Stone created successfully!');
     }
 
-    public function edit($id)
+    public function edit(Gem $gem)
     {
-        $data['gem'] = Gem::find($id);
-        return view('admin.gems.edit', $data);
+        // $data['gem'] = Gem::find($id);
+        return view('admin.gems.edit', compact('gem'));
     }
 
     public function update(Request $request)

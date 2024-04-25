@@ -35,6 +35,7 @@
                 <th>species</th>
                 <th>comments</th>
                 <th>Image</th>
+                <th>Report</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -110,6 +111,12 @@
                 {
                     data: 'image',
                     name: 'image',
+                    orderable: false,
+                    searchable: false
+                },
+                {
+                    data: 'view',
+                    name: 'view',
                     orderable: false,
                     searchable: false
                 },
