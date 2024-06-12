@@ -17,27 +17,30 @@
 
 <section id="hero" class="d-flex align-items-center justify-content-between">
   <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="form-box w-100">
-          <form id="ajax-form" action="{{route('getreport')}}" class="w-100">
+    <form id="ajax-form" action="{{route('getreport')}}" class="w-100">
+      <div class="row gx-3">
+        <div class="col-md-8">
+          <div class="form-box w-100">
             @csrf
-            <div class="input_wrap position-relative">
-              <input type="text" class="form-control h-auto border-0 bg-transparent border-bottom rounded-0 ps-0" onblur="hideLabel(this)" autocomplete="off" id="report_num" name="report">
+            <!-- <div class="input_wrap position-relative"> -->
+            <input type="text" class="form-control h-auto bg-transparent" onblur="hideLabel(this)" autocomplete="off" id="report_num" name="report" placeholder="Enter Your Report Number">
 
-              <!-- <div class="error_msg">
+            <!-- <div class="error_msg">
                 <p class="form-error-msg m-0 mb-2" id="form-error"></p>
               </div> -->
-              <label for="report_num" class="position-absolute _label">Enter Your Report Number</label>
-              <div class="animate_border position-absolute bg-warning"></div>
-            </div>
-            <button class="btn btn-warning text-light rounded-pill shadow-sm px-5 mt-3" type="submit" id="button-addon2">Get Report</button>
+            <!-- <label for="report_num" class="position-absolute _label">Enter Your Report Number</label> -->
+            <!-- <div class="animate_border position-absolute bg-warning"></div> -->
+            <!-- </div> -->
+
             <!-- <div class="input-group mb-3">
             </div> -->
-          </form>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <button class="btn _default_green text-light shadow-sm px-5 w-100" type="submit" id="button-addon2">Get Report</button>
         </div>
       </div>
-    </div>
+    </form>
   </div>
   {{-- <form id="ajax-form" action="{{route('getreport')}}">
   @csrf

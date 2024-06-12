@@ -10,7 +10,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Lato", sans-serif;
     color: #444444;
 }
 
@@ -24,14 +24,14 @@ a:hover {
     text-decoration: none;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
     font-family: "Dosis", sans-serif;
-}
+} */
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -70,7 +70,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-    background: #e5c366;
+    background: #fff;
     transition: all 0.5s;
     z-index: 997;
     padding: 20px 0;
@@ -93,7 +93,18 @@ h6 {
 }
 
 #header .logo img {
-    max-height: 75px;
+    /* max-height: 75px; */
+    height:95px;
+    width:auto;
+}
+
+._btn {
+    background-color: #5dbea3!important;
+    border:none;
+    border-color: transparent;
+}
+._btn:hover {
+    background: #003680!important;
 }
 
 /*--------------------------------------------------------------
@@ -123,11 +134,11 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0 10px 30px;
+    /* padding: 10px 0 10px 30px; */
     font-family: "Dosis", sans-serif;
     font-size: 15px;
     font-weight: 600;
-    color: #163b31;
+    color: #0a0a0a;
     white-space: nowrap;
     transition: 0.3s;
     text-transform: uppercase;
@@ -140,11 +151,27 @@ h6 {
     margin-left: 5px;
 }
 
+.navbar a {
+    border-bottom:3px solid transparent;
+    transition:0.3s ease-in-out;
+    padding-bottom:5px;
+}
+
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover > a {
-    color: #FE0467;
+    /* color: #FE0467; */
+    border-color:#0a0a0a;
+}
+
+._default_green {
+    background-color:#5dbea3!important;
+    border:2px solid #fff;
+}
+
+.navbar a:hover {
+    border-color:#0a0a0a;
 }
 
 .navbar .dropdown ul {
@@ -1345,7 +1372,7 @@ section {
     padding: 0 0 30px 0;
     color: #444444;
     font-size: 14px;
-    background: #e5c366;
+    background: #273647;
 }
 
 .footer-newsletter {
@@ -1403,7 +1430,7 @@ section {
 
 #footer .footer-top {
     padding: 60px 0 30px 0;
-    background: #e5c366;
+    /* background: #e5c366; */
 }
 
 #footer .footer-top .footer-contact {
@@ -1427,16 +1454,16 @@ section {
 }
 
 #footer .footer-top h4 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #0f394c;
+    font-size: 18px;
+    /* font-weight: bold; */
+    color: #fff;
     position: relative;
-    padding-bottom: 12px;
+    margin-bottom: 20px;
 }
-
+/* 
 #footer .footer-top .footer-links {
     margin-bottom: 30px;
-}
+} */
 
 #footer .footer-top .footer-links ul {
     list-style: none;
@@ -1446,7 +1473,7 @@ section {
 
 #footer .footer-top .footer-links ul i {
     padding-right: 2px;
-    color: #49b5e7;
+    color: #eee;
     font-size: 18px;
     line-height: 1;
 }
@@ -1455,6 +1482,8 @@ section {
     padding: 10px 0;
     display: flex;
     align-items: center;
+    font-weight:300;
+    border-bottom:1px solid hsla(0,0%,100%,.2);
 }
 
 #footer .footer-top .footer-links ul li:first-child {
@@ -1462,7 +1491,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a {
-    color: #000;
+    color: #fff;
     transition: 0.3s;
     display: inline-block;
     line-height: 1;

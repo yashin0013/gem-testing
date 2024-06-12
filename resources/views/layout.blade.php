@@ -22,7 +22,8 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -33,22 +34,25 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
+  <header id="header" class="fixed-top py-0">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <a href="{{url('/')}}" class="logo"><img src="assets/img/logo2.png" alt="" class="img-fluid"></a>
+      <a href="{{url('/')}}" class="logo"><img src="assets/img/gems-testing-india-logo.webp" alt="" class="img-fluid"></a>
       <!-- Uncomment below if you prefer to use text as a logo -->
       <!-- <h1 class="logo"><a href="index.html">Butterfly</a></h1> -->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto active mx-3" href="/">Home</a></li>
+          <li><a class="nav-link scrollto mx-3" href="/services">Services</a></li>
+          <li><a class="nav-link scrollto mx-3" href="/contact-us">Contact Us</a></li>
+          <li><a class="nav-link scrollto mx-3" href="/about-us">About Us</a></li>
+          <li><a class="nav-link scrollto mx-3" href="/blog">BLOG</a></li>
+          <li><a class="nav-link scrollto mx-3" href="/faq">FAQ</a></li>
           {{-- <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li> --}}
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto mx-3" href="#team">Team</a></li> --}}
         </ul>
+        <a href="/verify-reports" class="btn btn-success _btn ms-4 rounded-pill px-3">VERIFY REPORTS</a>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
@@ -57,7 +61,7 @@
 
 
   @section('container')
-    @show
+  @show
 
 
   <!-- ======= Footer ======= -->
@@ -65,64 +69,95 @@
 
     <div class="footer-top">
       <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
 
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Butterfly</h3>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong><a href="tel:1 5589 55488 55" class="text-dark"> +1 5589 55488 55</a><br>
-              <strong>Email:</strong><a href="mailto:info@example.com" class="text-dark"> info@example.com</a><br>
-            </p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Terms of service</a></li>
-              <li><a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Web Development</a></li>
-              <li><a href="#">Product Management</a></li>
-              <li><a href="#">Marketing</a></li>
-              <li><a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-            <div class="social-links mt-3">
+          <div class="col-lg-4 col-md-6 footer-links">
+            <div class="d-inline-block rounded-1 overflow-hidden px-3" style="background:#fff;width: 50%;height: 50px;">
+              <img src="assets/img/gems-testing-india-logo.webp" alt="logo_img" class="img-fluid" style="transform:translateY(-15px);">
+            </div>
+            <h4 class="text-light mt-4">D-15, South Extension- 2, New Delhi-110049</h4>
+            <h4 class="text-light mt-2"><a href="mailto:gemtestingindia@gmail.com"></a><i class="fa-regular fa-envelope me-2"></i> E-MAIL</h4>
+            <!-- <p class="text-light">Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p> -->
+            <!-- <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
               <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
               <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
               <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div>
+            </div> -->
           </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Company</h4>
+            <!-- <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br>
+              <strong>Phone:</strong><a href="tel:1 5589 55488 55" class="text-dark"> +1 5589 55488 55</a><br>
+              <strong>Email:</strong><a href="mailto:info@example.com" class="text-dark"> info@example.com</a><br>
+            </p> -->
+            <ul>
+              <li>
+                <i class="fa-solid fa-angle-right me-2"></i>
+                <a href="/about-us">About us</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-angle-right me-2"></i>
+                <a href="/contact-us">Contact Us</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-angle-right me-2"></i>
+                <a href="/faq">FAQ</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Customer Service</h4>
+            <ul>
+              <li>
+                <i class="fa-solid fa-angle-right me-2"></i>
+                <a href="/privacy-policy">Privacy Policy</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-angle-right me-2"></i>
+                <a href="/terms-conditions">Terms & Conditions</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-angle-right me-2"></i>
+                <a href="/disclaimer">Disclaimer</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Services</h4>
+            <ul>
+              <li>
+                <i class="fa-solid fa-angle-right me-2"></i>
+                <a href="/services">Our Services</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-angle-right me-2"></i>
+                <a href="/shop">Shop</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-angle-right me-2"></i>
+                <a href="/blog">News & Blogs</a>
+              </li>
+            </ul>
+          </div>
+
 
         </div>
       </div>
     </div>
 
-    <div class="container py-4">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Gems</span></strong>. All Rights Reserved
+    <div class="container pb-4">
+      <div class="copyright text-light w-100 text-center fs-6">
+        Copyrights © 2024 Gems Testing India. All Rights Reserved
       </div>
-      {{-- <div class="credits">
-        Designed by Yashin
-      </div> --}}
+
     </div>
   </footer><!-- End Footer -->
 
