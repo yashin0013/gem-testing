@@ -51,8 +51,10 @@
           <li><a class="nav-link scrollto mx-3" href="/faq">FAQ</a></li>
           {{-- <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto mx-3" href="#team">Team</a></li> --}}
+          <li>
+            <a href="/verify-reports" class="btn btn-success _btn ms-4 rounded-pill px-3 text-light d-inline-block">VERIFY REPORTS</a>
+          </li>
         </ul>
-        <a href="/verify-reports" class="btn btn-success _btn ms-4 rounded-pill px-3">VERIFY REPORTS</a>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
@@ -71,7 +73,7 @@
       <div class="container">
         <div class="row justify-content-center">
 
-          <div class="col-lg-4 col-md-6 footer-links">
+          <div class="col-lg-4 col-md-6 footer-links mb-4 mb-lg-0">
             <div class="d-inline-block rounded-1 overflow-hidden px-3" style="background:#fff;width: 50%;height: 50px;">
               <img src="assets/img/gems-testing-india-logo.webp" alt="logo_img" class="img-fluid" style="transform:translateY(-15px);">
             </div>
@@ -87,7 +89,7 @@
             </div> -->
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
+          <div class="col-lg-2 col-md-6 footer-links mb-4 mb-lg-0">
             <h4>Company</h4>
             <!-- <p>
               A108 Adam Street <br>
@@ -112,7 +114,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
+          <div class="col-lg-2 col-md-6 footer-links mb-4 mb-lg-0">
             <h4>Customer Service</h4>
             <ul>
               <li>
@@ -130,7 +132,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
+          <div class="col-lg-2 col-md-6 footer-links mb-4 mb-lg-0">
             <h4>Services</h4>
             <ul>
               <li>

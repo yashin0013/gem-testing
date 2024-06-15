@@ -1473,7 +1473,7 @@ section {
 
 #footer .footer-top .footer-links ul i {
     padding-right: 2px;
-    color: #eee;
+    color: hsla(0,0%,100%,.2);
     font-size: 18px;
     line-height: 1;
 }
