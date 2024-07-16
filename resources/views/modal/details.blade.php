@@ -2,7 +2,7 @@
     <div class="header_logo">
         <img src="{{asset('assets/img/logo2.png')}}" alt="gem_logo" width="80">
     </div>
-    <h1 class="modal-title fs-2 fw-bolder text-warning text-uppercase" id="exampleModalLabel">GEM TESTING INDIA</h1>
+    <h1 class="modal-title fs-2 fw-bolder text-dark text-uppercase" id="exampleModalLabel">GEM TESTING INDIA</h1>
     <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body">

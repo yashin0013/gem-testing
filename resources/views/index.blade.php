@@ -16,14 +16,14 @@
 
 
 <section id="hero" class="d-flex align-items-center justify-content-between">
-  <div class="container">
+  <div class="container position-absolute start-50 translate-middle-x" style="top:186px;">
     <form id="ajax-form" action="{{route('getreport')}}" class="w-100">
       <div class="row gx-3">
-        <div class="col-md-8">
+        <div class="col-md-7">
           <div class="form-box w-100">
             @csrf
             <!-- <div class="input_wrap position-relative"> -->
-            <input type="text" class="form-control h-auto bg-transparent" onblur="hideLabel(this)" autocomplete="off" id="report_num" name="report" placeholder="Enter Your Report Number">
+            <input type="text" class="form-control h-auto bg-transparent text-light" onblur="hideLabel(this)" autocomplete="off" id="report_num" name="report" placeholder="Enter Your Report Number">
 
             <!-- <div class="error_msg">
                 <p class="form-error-msg m-0 mb-2" id="form-error"></p>
@@ -36,7 +36,7 @@
             </div> -->
           </div>
         </div>
-        <div class="col-md-4 mt-4 mt-md-0">
+        <div class="col-md-5 mt-4 mt-md-0">
           <button class="btn _default_green text-light shadow-sm px-5 w-100" type="submit" id="button-addon2">Get Report</button>
         </div>
       </div>

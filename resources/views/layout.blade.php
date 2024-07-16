@@ -78,7 +78,7 @@
               <img src="assets/img/gems-testing-india-logo.webp" alt="logo_img" class="img-fluid" style="transform:translateY(-15px);">
             </div>
             <h4 class="text-light mt-4">D-15, South Extension- 2, New Delhi-110049</h4>
-            <h4 class="text-light mt-2"><a href="mailto:gemtestingindia@gmail.com"></a><i class="fa-regular fa-envelope me-2"></i> E-MAIL</h4>
+            <h4 class="text-light mt-2"><a class="text-light" href="mailto:gemtestingindia@gmail.com"><i class="fa-regular fa-envelope me-2"></i> E-MAIL</a></h4>
             <!-- <p class="text-light">Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p> -->
             <!-- <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
