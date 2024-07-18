@@ -16,7 +16,7 @@
 
 
 <section id="hero" class="d-flex align-items-center justify-content-between">
-  <div class="container position-absolute start-50 translate-middle-x" style="top:186px;">
+  <div class="container position-absolute start-50 translate-middle-x" >
     <form id="ajax-form" action="{{route('getreport')}}" class="w-100">
       <div class="row gx-3">
         <div class="col-md-7">
