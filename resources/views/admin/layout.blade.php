@@ -87,6 +87,11 @@
                             <a href="{{url('admin/contact_msg')}}">
                                 <i class="fas fa-list"></i>Contact Masseges</a>
                         </li>
+                        <li class="@yield('reports')">
+                            <a href="{{url('admin/reports')}}">
+                            <i class="fab fa-usps"></i>Image Reports
+                        </a>
+                        </li>
                         <li class="@yield('gems')">
                             <a href="{{url('admin/gems')}}">
                             <i class="fab fa-usps"></i>Gem Stones</a>

@@ -6,6 +6,7 @@ use App\Http\Controllers\DiamondController;
 use App\Http\Controllers\FilesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JewelleryController;
+use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\RudrakshaController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -21,10 +22,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/run', function () {
-    Artisan::call("migrate");
-    Artisan::call("db:seed");
-});
+// Route::get('/run', function () {
+//     Artisan::call("migrate");
+//     Artisan::call("db:seed");
+// });
 
 Route::get('/', [HomeController::class,'index']);
 Route::get('/info', function () {
@@ -52,12 +53,14 @@ Route::resources([
     'rudraksha' => RudrakshaController::class,
     'gems' => GemController::class,
     'files' => FilesController::class,
+    'reports' => ReportsController::class
 ]);
 
 Route::get('/files/{files}/delete',[FilesController::class,'delete']);
 
 
 Route::get('/gems/{gem}/delete',[GemController::class,'delete']);
+Route::get('/reports/{report}/delete',[ReportsController::class,'delete']);
 Route::get('/import/{type}',[GemController::class,'import_page']);
 Route::post('/gem/import',[GemController::class,'import'])->name('gem.import');
 Route::get('/sample-excel/{type}',[GemController::class,'download_excel']);
