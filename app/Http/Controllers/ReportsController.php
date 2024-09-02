@@ -53,7 +53,7 @@ class ReportsController extends Controller
 
         $request->validate([
             'report_number' => 'required|unique:reports,number',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg',
         ]);
 
         $report = new Report();
@@ -88,7 +88,7 @@ class ReportsController extends Controller
         $request->validate([
             'report_number' => 'required',
             'id' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg',
         ]);
 
         $gem = Report::find($request->id);
