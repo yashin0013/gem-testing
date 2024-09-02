@@ -16,7 +16,7 @@
 
 
 <section id="hero" class="d-flex align-items-center justify-content-between">
-  <div class="container position-absolute start-50 translate-middle-x" >
+  <div class="container position-absolute start-50 translate-middle-x">
     <form id="ajax-form" action="{{route('getreport')}}" class="w-100">
       <div class="row gx-3">
         <div class="col-md-7">
@@ -32,8 +32,6 @@
             <!-- <div class="animate_border position-absolute bg-warning"></div> -->
             <!-- </div> -->
 
-            <!-- <div class="input-group mb-3">
-            </div> -->
           </div>
         </div>
         <div class="col-md-5 mt-4 mt-md-0">
@@ -41,6 +39,9 @@
         </div>
       </div>
     </form>
+    <div class="mt-5">
+      <p class="text-light">Note: – Reports will be Updated Within 3 to 4 Business Days. Thank You for Your Patience!</p>
+    </div>
   </div>
   {{-- <form id="ajax-form" action="{{route('getreport')}}">
   @csrf
