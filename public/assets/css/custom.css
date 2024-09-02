@@ -53,7 +53,7 @@
 
 @media (max-width:426px) {
     #hero {
-        height: 54vh !important;
+        height: 100vh !important;
         background-size: 60% 100%;
     }
     #hero .container {
