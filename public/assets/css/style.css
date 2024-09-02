@@ -243,12 +243,15 @@ h6 {
 * Mobile Navigation
 */
 .mobile-nav-toggle {
-    color: #0f394c;
-    font-size: 28px;
+    color: #5dbea3;
+    font-size: 20px;
     cursor: pointer;
     display: none;
     line-height: 0;
     transition: 0.5s;
+    border: 1.2px solid #5dbea3;
+    border-radius: 50%;
+    padding: 5px;
 }
 
 .mobile-nav-toggle.bi-x {
@@ -286,10 +289,10 @@ h6 {
 .navbar-mobile ul {
     display: block;
     position: absolute;
-    top: 55px;
-    right: 15px;
+    top: 0;
+    right: 90px;
     bottom: 15px;
-    left: 15px;
+    left: 0;
     padding: 10px 0;
     background-color: #fff;
     overflow-y: auto;
