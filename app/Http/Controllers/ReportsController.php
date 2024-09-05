@@ -18,7 +18,7 @@ class ReportsController extends Controller
                 ->addIndexColumn()
                 ->addColumn('image', function ($row) {
                     return '<img
-                        src="/images/gems/' . $row->image . '"
+                        src="/verify-reports/images/gems/' . $row->image . '"
                         class="img-fluid"
                         alt=""
                         width="100"
@@ -26,10 +26,10 @@ class ReportsController extends Controller
                 })
                 ->addColumn('action', function ($row) {
                     $btn =  '<div class="d-flex align-items-center justify-content-center" >
-                        <a href="/admin/reports/' . $row->id . '/edit" class="btn btn-sm btn-outline-primary mr-1">
+                        <a href="/verify-reports/admin/reports/' . $row->id . '/edit" class="btn btn-sm btn-outline-primary mr-1">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a href="/admin/reports/' . $row->id . '/delete" onclick="return confirm(\'Are you sure you want to delete this item?\');" class="btn btn-sm btn-outline-danger">
+                        <a href="/verify-reports/admin/reports/' . $row->id . '/delete" onclick="return confirm(\'Are you sure you want to delete this item?\');" class="btn btn-sm btn-outline-danger">
                             <i class="fas fa-trash-alt"></i>
                         </a>
                     </div>';
