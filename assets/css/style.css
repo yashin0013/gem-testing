@@ -99,12 +99,23 @@ h6 {
 }
 
 ._btn {
-    background-color: #5dbea3!important;
+    background-color: #5dbea3;
     border:none;
     border-color: transparent;
 }
 ._btn:hover {
     background: #003680!important;
+}
+
+@media (max-width: 768px) {
+    ._btn{
+        background-color:#003680;
+        padding: 3px 23px !important;
+        margin-top: 12px;
+    }
+    .navbar a {
+        border-bottom: 0px;
+    }
 }
 
 /*--------------------------------------------------------------

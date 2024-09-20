@@ -20,10 +20,10 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="report_number" class="control-label mb-1">Report Number</label>
-                                <input id="report_number" name="report_number" type="text" value="{{ $report->number }}" class="form-control" required>
+                                <label for="number" class="control-label mb-1">Report Number</label>
+                                <input id="number" name="number" type="text" value="{{ $report->number }}" class="form-control" required>
                             </div>
-                            @error('report_number')
+                            @error('number')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>

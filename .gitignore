@@ -6,6 +6,9 @@
 /public/images
 /storage/*.key
 /vendor
+/public
+/images
+/verify-reports
 .env
 .env.backup
 .env.production

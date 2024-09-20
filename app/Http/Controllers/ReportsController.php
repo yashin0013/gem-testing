@@ -6,6 +6,7 @@ use App\Models\Report;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Validation\Rule;
 
 class ReportsController extends Controller
 {
@@ -52,12 +53,12 @@ class ReportsController extends Controller
     {
 
         $request->validate([
-            'report_number' => 'required|unique:reports,number',
-            'image' => 'required|image|mimes:jpeg,png,jpg',
+            'number' => 'required|unique:reports',
+            'image' => 'required|image|mimes:jpeg,png,jpg,webp',
         ]);
 
         $report = new Report();
-        $report->number = $request->report_number;
+        $report->number = $request->number;
         if ($request->hasfile('image')) {
             $image = $request->file('image');
             // $image_name = $image->getClientOriginalName();
@@ -85,14 +86,15 @@ class ReportsController extends Controller
 
     public function update(Request $request)
     {
+        $id = $request->id;
         $request->validate([
-            'report_number' => 'required',
+            'number' => ['required',Rule::unique('reports')->ignore($id)],
             'id' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg',
         ]);
 
-        $gem = Report::find($request->id);
-        $gem->number = $request->report_number;
+        $gem = Report::find($id);
+        $gem->number = $request->number;
         if ($request->hasfile('image')) {
             $image = $request->file('image');
             // $image_name = $image->getClientOriginalName();
